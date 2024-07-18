@@ -1,1 +1,1 @@
-# linux-install
+# linux-scripts
