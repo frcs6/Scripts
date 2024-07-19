@@ -8,7 +8,7 @@
 - Configure Spofity
 - Configure Gnome Online Account
 - Add language in Libre Office
-- Timeshift ???
+- Timeshift
 
 ## Extensions
 
