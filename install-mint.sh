@@ -10,11 +10,6 @@ install_dropbox() {
     sudo apt install ./dropbox.deb -y
 }
 
-install_flatpak() {
-    sudo apt install flatpak gnome-software-plugin-flatpak -y
-    flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-}
-
 install_yoga_drivers() {
     sudo apt install build-essential dkms git iw -y
     mkdir ~/Drivers
@@ -27,16 +22,15 @@ install_yoga_drivers() {
 }
 
 install_softwares() {
-    sudo apt autoremove gnome-snapshot -y
-    sudo apt install ubuntu-restricted-addons gnome-tweaks gnome-shell-extension-alphabetical-grid gnome-shell-extension-manager gnome-shell-extension-prefs gnome-shell-extensions timeshift samba cheese papirus-icon-theme -y
+    sudo apt install ubuntu-restricted-addons samba -y
     
-    snap install spotify jdownloader2
+    #snap install spotify jdownloader2
     
     flatpak install flathub org.keepassxc.KeePassXC flathub com.github.tchx84.Flatseal -y
 }
 
 cleanup_software() {
-    snap remove --purge firefox snap-store thunderbird
+    sudo apt autoremove firefox* thunderbird*
 }
 
 configure_others() {
