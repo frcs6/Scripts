@@ -5,11 +5,6 @@ install_google_chrome() {
     sudo apt install ./google-chrome-stable_current_amd64.deb -y
 }
 
-install_dropbox() {
-    wget -O dropbox.deb https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2024.04.17_amd64.deb
-    sudo apt install ./dropbox.deb -y
-}
-
 install_yoga_drivers() {
     sudo apt install build-essential dkms git iw -y
     mkdir ~/Drivers
@@ -22,19 +17,12 @@ install_yoga_drivers() {
 }
 
 install_softwares() {
-    sudo apt install ubuntu-restricted-addons samba -y
-    
-    #snap install spotify jdownloader2
-    
+    sudo apt install ubuntu-restricted-addons samba dropbox spotify -y
     flatpak install flathub org.keepassxc.KeePassXC flathub com.github.tchx84.Flatseal -y
 }
 
 cleanup_software() {
-    sudo apt autoremove firefox* thunderbird*
-}
-
-configure_others() {
-    echo "snap" >> ~/.hidden
+    sudo apt autoremove firefox* thunderbird* mintchat*
 }
 
 mkdir ~/tmp
@@ -44,10 +32,8 @@ pushd ~/tmp
 #install_google_chrome
 #install_flatpak
 #install_yoga_drivers
-#install_dropbox
 #install_softwares
 #cleanup_software
-#configure_others
 
 popd
 rm -rf ~/tmp
