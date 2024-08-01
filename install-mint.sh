@@ -17,7 +17,7 @@ install_yoga_drivers() {
 }
 
 install_softwares() {
-    sudo apt install ubuntu-restricted-addons samba dropbox spotify -y
+    sudo apt install ubuntu-restricted-addons samba dropbox nemo-dropbox spotify-client -y
     flatpak install flathub org.keepassxc.KeePassXC flathub com.github.tchx84.Flatseal -y
 }
 
@@ -30,7 +30,6 @@ pushd ~/tmp
 
 #sudo apt update
 #install_google_chrome
-#install_flatpak
 #install_yoga_drivers
 #install_softwares
 #cleanup_software
