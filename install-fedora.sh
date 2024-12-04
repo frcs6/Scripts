@@ -54,6 +54,17 @@ cleanup_software() {
     dnf remove firefox
 }
 
+install_yoga_drivers() {
+    sudo dnf -y install git dkms kernel-devel
+    mkdir ~/Drivers
+    pushd ~/Drivers
+    git clone https://github.com/morrownr/8821au-20210708.git
+    pushd ./8821au-20210708
+    sudo ./install-driver.sh
+    popd
+    popd
+}
+
 mkdir ~/tmp
 pushd ~/tmp
 
@@ -63,7 +74,8 @@ pushd ~/tmp
 #rpm_fusion
 #install_softwares
 #cleanup_software
-install_dropbox
+#install_dropbox
+#install_yoga_drivers
 
 popd
 rm -rf ~/tmp
