@@ -47,6 +47,7 @@ install_softwares() {
     dnf install -y file-roller
     dnf install -y keepassxc
     dnf install -y timeshift
+    dnf install -y langpacks-fr
     flatpak install com.github.tchx84.Flatseal -y
 }
 
