@@ -44,7 +44,7 @@ rpm_fusion() {
 install_softwares() {
     dnf swap -y "ffmpeg-free" "ffmpeg" --allowerasing
     dnf install -y gstreamer1-plugins-base gstreamer1-plugins-good gstreamer1-plugins-bad-free gstreamer1-plugins-good-extras gstreamer1-plugins-bad-free-extras gstreamer1-plugins-ugly-free gstreamer1-plugin-libav gstreamer1-plugins-ugly libdvdcss gstreamer1-plugin-openh264
-    dnf install -y adwaita-qt5 adwaita-qt6
+    #dnf install -y adwaita-qt5 adwaita-qt6
     dnf install -y gnome-extensions-app gnome-shell-extension-dash-to-dock gnome-shell-extension-appindicator gnome-shell-extension-user-theme
     dnf install -y gnome-tweaks file-roller git keepassxc timeshift
     flatpak install com.github.tchx84.Flatseal -y
