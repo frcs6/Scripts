@@ -38,7 +38,6 @@ install_softwares() {
     dnf install -y gstreamer1-plugins-ugly-free
     dnf install -y gstreamer1-plugin-libav
     dnf install -y gstreamer1-plugins-ugly
-    dnf install -y libdvdcss
     dnf install -y gstreamer1-plugin-openh264
     dnf install -y gnome-extensions-app
     dnf install -y gnome-shell-extension-dash-to-dock
