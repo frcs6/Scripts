@@ -28,7 +28,7 @@ install_yoga_drivers() {
 
 install_softwares() {
     sudo apt autoremove gnome-snapshot -y
-    sudo apt install ubuntu-restricted-addons gnome-tweaks gnome-shell-extension-alphabetical-grid gnome-shell-extension-prefs gnome-shell-extensions timeshift samba cheese papirus-icon-theme adwaita-qt5 adwaita-qt6 -y
+    sudo apt install ubuntu-restricted-addons gnome-tweaks gnome-shell-extension-alphabetical-grid gnome-shell-extension-prefs gnome-shell-extensions timeshift samba cheese papirus-icon-theme -y
     snap install spotify
     flatpak install flathub org.keepassxc.KeePassXC flathub com.github.tchx84.Flatseal -y
 }
