@@ -37,16 +37,33 @@ clean_repos() {
 }
 
 rpm_fusion() {
-    sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+    sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
     sudo dnf config-manager setopt fedora-cisco-openh264.enabled=1
 }
 
 install_softwares() {
     dnf swap -y "ffmpeg-free" "ffmpeg" --allowerasing
-    dnf install -y gstreamer1-plugins-base gstreamer1-plugins-good gstreamer1-plugins-bad-free gstreamer1-plugins-good-extras gstreamer1-plugins-bad-free-extras gstreamer1-plugins-ugly-free gstreamer1-plugin-libav gstreamer1-plugins-ugly libdvdcss gstreamer1-plugin-openh264
-    #dnf install -y adwaita-qt5 adwaita-qt6
-    dnf install -y gnome-extensions-app gnome-shell-extension-dash-to-dock gnome-shell-extension-appindicator gnome-shell-extension-user-theme
-    dnf install -y gnome-tweaks file-roller git keepassxc timeshift
+    dnf install -y gstreamer1-plugins-base
+    dnf install -y gstreamer1-plugins-good
+    dnf install -y gstreamer1-plugins-bad-free
+    dnf install -y gstreamer1-plugins-good-extras
+    dnf install -y gstreamer1-plugins-bad-free-extras
+    dnf install -y gstreamer1-plugins-ugly-free
+    dnf install -y gstreamer1-plugin-libav
+    dnf install -y gstreamer1-plugins-ugly
+    dnf install -y libdvdcss
+    dnf install -y gstreamer1-plugin-openh264
+    dnf install -y adwaita-qt5
+    dnf install -y adwaita-qt6
+    dnf install -y gnome-extensions-app
+    dnf install -y gnome-shell-extension-dash-to-dock
+    dnf install -y gnome-shell-extension-appindicator
+    dnf install -y gnome-shell-extension-user-theme
+    dnf install -y gnome-tweaks
+    dnf install -y file-roller
+    dnf install -y git
+    dnf install -y keepassxc
+    dnf install -y timeshift
     flatpak install com.github.tchx84.Flatseal -y
 }
 
