@@ -18,6 +18,7 @@ install_yoga_drivers() {
 
 install_softwares() {
     sudo apt install ubuntu-restricted-addons samba dropbox nemo-dropbox spotify-client keepassxc -y
+    sudo apt install epapirus-icon-theme papirus-colors papirus-icon-theme -y
     flatpak install com.github.tchx84.Flatseal -y
 }
 
