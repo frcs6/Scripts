@@ -2,18 +2,12 @@
 
 ## Configure 
 
-- Ubuntu Pro
 - Google Chrome
 - Dropbox + Scripts `ln-dropbox.sh`
 - Configure Spofity
 - Configure Gnome Online Account
 - Add language in Libre Office
 - Timeshift
-
-## Extensions Gnome
-
-- caffeine
-- gamemode shell extension
 
 ## Others
 
