@@ -55,24 +55,24 @@ ubuntu()
     install_google_chrome
     install_dropbox
     install_softwares
+    #configure_flatpak # Need logout
+    #install_flatpaks
+    snap install spotify
+    snap remove --purge firefox snap-store thunderbird libreoffice
     sudo apt install gnome-tweaks -y
     sudo apt install gnome-shell-extension-alphabetical-grid -y
     sudo apt install gnome-shell-extension-prefs -y
     sudo apt install gnome-shell-extensions -y
     sudo apt install timeshift -y
-    #configure_flatpak # Need logout
-    #install_flatpaks
-    snap install spotify
-    snap remove --purge firefox snap-store thunderbird
+    sudo apt install libreoffice -y
     echo "snap" >> ~/.hidden
 }
 
 mkdir ~/tmp
 pushd ~/tmp
 
-sudo apt update
-sudo apt upgrade
-mint
+#sudo apt update
+#mint
 #ubuntu
 
 popd
