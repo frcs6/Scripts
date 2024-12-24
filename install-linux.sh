@@ -65,6 +65,7 @@ ubuntu()
     sudo apt install gnome-shell-extensions -y
     sudo apt install timeshift -y
     sudo apt install libreoffice -y
+    sudo apt install file-roller -y
     echo "snap" >> ~/.hidden
 }
 
