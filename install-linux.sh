@@ -43,8 +43,8 @@ mint()
 {
     install_google_chrome
     install_softwares
-    sudo apt install dropbox -y
-    sudo apt install nemo-dropbox -y
+    #sudo apt install dropbox -y
+    #sudo apt install nemo-dropbox -y
     sudo apt install spotify-client -y
     sudo apt autoremove firefox* thunderbird* mintchat*
     install_flatpaks
