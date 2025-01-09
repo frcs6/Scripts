@@ -53,7 +53,7 @@ mint()
 ubuntu()
 {
     install_google_chrome
-    install_dropbox
+    #install_dropbox
     install_softwares
     #configure_flatpak # Need logout
     #install_flatpaks
