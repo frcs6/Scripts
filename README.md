@@ -3,7 +3,7 @@
 ## Configure 
 
 - Google Chrome
-- Dropbox + Scripts `ln-dropbox.sh`
+- Dropbox ou OneDrive
 - Configure Spofity
 - Configure Gnome Online Account
 - Add language in Libre Office
@@ -14,7 +14,6 @@
 - Dual boot Windows: `timedatectl set-local-rtc 1 --adjust-system-clock`
 - Samba v1: https://askubuntu.com/questions/1265923/configuring-20-04-samba-for-smbv1
 - Ubuntu Pro: https://ubuntu.com/pro/dashboard
-- Move 'Downloads': `ln -s /data/Frcs6/Downloads ~/Downloads`
 
 ## RClone - auto-start command
 
