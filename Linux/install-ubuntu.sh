@@ -31,7 +31,7 @@ sudo apt install timeshift -y
 sudo apt install libreoffice -y
 sudo apt install file-roller -y
 
-#configure_flatpak
+#configure_flatpak # Need logout
 #install_base_flatpaks
 
 popd
