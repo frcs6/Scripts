@@ -39,12 +39,30 @@ install_flatpaks()
     flatpak install com.github.tchx84.Flatseal -y
 }
 
+install_insync_ubuntu()
+{
+    wget https://cdn.insynchq.com/builds/linux/3.9.4.60020/insync_3.9.4.60020-noble_amd64.deb
+    sudo apt install ./insync_3.9.4.60020-noble_amd64.deb -y
+
+    wget https://cdn.insynchq.com/builds/linux/3.8.2.50468/insync-nautilus_3.8.2.50468_all.deb
+    sudo apt install ./insync-nautilus_3.8.2.50468_all.deb -y
+}
+
+install_insync_mint()
+{
+    wget https://cdn.insynchq.com/builds/linux/3.9.4.60020/insync_3.9.4.60020-noble_amd64.deb
+    sudo apt install ./insync_3.9.4.60020-noble_amd64.deb -y
+
+    wget https://cdn.insynchq.com/builds/linux/3.7.9.50368/insync-nemo_3.7.9.50368_all.deb
+    sudo apt install ./insync-nemo_3.7.9.50368_all.deb -y
+}
+
 mint()
 {
     install_google_chrome
+    #sudo apt install dropbox nemo-dropbox -y
     install_softwares
-    #sudo apt install dropbox -y
-    #sudo apt install nemo-dropbox -y
+    install_insync_mint    
     sudo apt install spotify-client -y
     sudo apt autoremove firefox* thunderbird* mintchat*
     install_flatpaks
@@ -57,6 +75,7 @@ ubuntu()
     install_softwares
     #configure_flatpak # Need logout
     #install_flatpaks
+    install_insync_ubuntu
     snap install spotify
     snap remove --purge firefox snap-store thunderbird libreoffice
     sudo apt install gnome-tweaks -y
