@@ -45,13 +45,12 @@ install_insync() {
 
   wget https://cdn.insynchq.com/builds/linux/3.9.4.60020/insync_3.9.4.60020-noble_amd64.deb
   sudo apt install ./insync_3.9.4.60020-noble_amd64.deb -y
+  sudo apt update
 
-  if [ "$FILE_MANAGER" == "nautilus" ]; then
-    wget https://cdn.insynchq.com/builds/linux/3.8.2.50468/insync-nautilus_3.8.2.50468_all.deb
-    sudo apt install ./insync-nautilus_3.8.2.50468_all.deb -y
+  if [ "$FILE_MANAGER" == "nautilus" ]; then    
+    sudo apt install insync-nautilus -y
   elif [ "$FILE_MANAGER" == "nemo" ]; then
-    wget https://cdn.insynchq.com/builds/linux/3.7.9.50368/insync-nemo_3.7.9.50368_all.deb
-    sudo apt install ./insync-nemo_3.7.9.50368_all.deb -y
+    sudo apt install insync-nemo -y
   else
     echo "Unsupported file manager: $FILE_MANAGER"
     return 1
