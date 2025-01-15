@@ -1,13 +1,11 @@
 #!/bin/bash
 
-rm -rf ~/Desktop
-ln -s ~/Insync/MAIL/OneDrive/Bureau ~/Desktop
+SCRIPT_DIR=$(dirname "${BASH_SOURCE[0]}")
+source "$SCRIPT_DIR/common-functions.sh"
 
-rm -rf ~/Documents
-ln -s ~/Insync/MAIL/OneDrive/Documents ~/Documents
+MAIL=$1
 
-rm -rf ~/Pictures
-ln -s ~/Insync/MAIL/OneDrive/Images ~/Pictures
-
-rm -rf ~/Templates
-ln -s ~/Insync/MAIL/OneDrive/Templates ~/Templates
+create_symlink "~/Insync/$MAIL/OneDrive/Bureau" ~/Desktop
+create_symlink "~/Insync/$MAIL/OneDrive/Documents" ~/Documents
+create_symlink "~/Insync/$MAIL/OneDrive/Images" ~/Pictures
+create_symlink "~/Insync/$MAIL/OneDrive/Templates" ~/Templates
