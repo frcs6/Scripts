@@ -15,7 +15,7 @@ pushd ~/tmp
 sudo apt update
 
 install_google_chrome
-nstall_insync nautilus
+install_insync nautilus
 #install_dropbox
 install_base_softwares
 
