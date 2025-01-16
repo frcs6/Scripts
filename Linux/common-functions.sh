@@ -65,6 +65,12 @@ install_spotify() {
   sudo apt-get install spotify-client
 }
 
+install_asus_camera()
+{
+  sudo apt install qv4l2
+  echo "LD_PRELOAD=/lib/x86_64-linux-gnu/libv4l/v4l1compat.so" | sudo tee -a /etc/environment
+}
+
 install_yoga_drivers() {
     sudo apt install build-essential dkms git iw -y
     mkdir ~/Drivers

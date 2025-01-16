@@ -18,6 +18,8 @@ install_google_chrome
 install_insync nautilus
 #install_dropbox
 install_base_softwares
+#install_asus_camera
+#install_yoga_drivers
 
 snap install spotify
 snap remove --purge firefox snap-store thunderbird libreoffice

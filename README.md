@@ -19,11 +19,3 @@
 
 `rclone --config /home/frcs6/.config/rclone/rclone.conf --vfs-cache-mode writes mount --daemon "OneDrive": /home/frcs6/OneDrive`
 (Add 30 seconds of delay on Mint)
-
-## ASUS Camera
-
-```
-sudo apt install qv4l2
-nano /etc/environment
-LD_PRELOAD=/lib/x86_64-linux-gnu/libv4l/v4l1compat.so
-```

@@ -12,6 +12,8 @@ install_google_chrome
 install_insync nemo
 install_base_softwares
 install_spotify
+#install_asus_camera
+#install_yoga_drivers
 
 #sudo apt install dropbox nemo-dropbox -y
 sudo apt autoremove firefox* thunderbird* mintchat*
