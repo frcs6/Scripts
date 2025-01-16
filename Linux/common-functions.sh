@@ -81,3 +81,12 @@ install_yoga_drivers() {
     popd
     popd
 }
+
+install_steam() {
+  wget https://repo.steampowered.com/steam/archive/precise/steam_latest.deb
+  sudo apt install ./steam_latest.deb -y
+}
+
+install_heroicgameslauncher() {
+  flatpak install flathub com.heroicgameslauncher.hgl
+}

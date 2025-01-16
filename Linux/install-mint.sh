@@ -14,6 +14,8 @@ install_base_softwares
 install_spotify
 #install_asus_camera
 #install_yoga_drivers
+#install_steam
+#install_heroicgameslauncher
 
 #sudo apt install dropbox nemo-dropbox -y
 sudo apt autoremove firefox* thunderbird* mintchat*
