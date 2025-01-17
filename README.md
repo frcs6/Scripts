@@ -8,6 +8,7 @@
 - Configure Gnome Online Account
 - Add language in Libre Office
 - Timeshift
+- Adjust swap size
 
 ## Others
 
