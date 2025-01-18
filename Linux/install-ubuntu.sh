@@ -20,8 +20,7 @@ install_insync nautilus
 install_base_softwares
 #install_asus_camera
 #install_yoga_drivers
-#install_steam
-#install_heroicgameslauncher
+#install_games
 
 snap install spotify
 snap remove --purge firefox snap-store thunderbird libreoffice
