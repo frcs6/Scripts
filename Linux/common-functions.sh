@@ -28,6 +28,7 @@ install_base_softwares() {
 install_base_flatpaks()
 {
     flatpak install com.github.tchx84.Flatseal -y
+    flatpak install flathub org.onlyoffice.desktopeditors -y
 }
 
 install_dropbox() {
