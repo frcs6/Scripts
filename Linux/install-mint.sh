@@ -17,7 +17,7 @@ install_spotify
 #install_games
 
 #sudo apt install dropbox nemo-dropbox -y
-sudo apt autoremove firefox* thunderbird* mintchat*
+sudo apt autoremove firefox* thunderbird* mintchat* libreoffice*
 
 install_base_flatpaks
 
