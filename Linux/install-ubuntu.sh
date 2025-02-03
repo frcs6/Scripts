@@ -9,6 +9,17 @@ configure_flatpak() {
     snap remove --purge snap-store
 }
 
+install_dropbox() {
+    wget -O dropbox.deb https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2024.04.17_amd64.deb
+    sudo apt install ./dropbox.deb -y
+}
+
+replace_libreoffice() {
+    snap remove --purge libreoffice
+    sudo apt autoremove libreoffice*
+    flatpak install flathub org.onlyoffice.desktopeditors -y
+}
+
 mkdir ~/tmp
 pushd ~/tmp
 
@@ -16,14 +27,17 @@ sudo apt update
 
 install_google_chrome
 install_insync nautilus
-#install_dropbox
 install_base_softwares
+snap install spotify
+
+#replace_libreoffice
+#install_dropbox
 #install_asus_camera
 #install_yoga_drivers
 #install_games
 
-snap install spotify
-snap remove --purge firefox snap-store thunderbird libreoffice
+snap remove --purge thunderbird
+
 echo "snap" >> ~/.hidden
 
 sudo apt install gnome-tweaks -y
@@ -31,7 +45,6 @@ sudo apt install gnome-shell-extension-alphabetical-grid -y
 sudo apt install gnome-shell-extension-prefs -y
 sudo apt install gnome-shell-extensions -y
 sudo apt install timeshift -y
-#sudo apt install libreoffice -y
 sudo apt install file-roller -y
 
 #configure_flatpak # Need logout

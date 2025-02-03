@@ -27,13 +27,7 @@ install_base_softwares() {
 
 install_base_flatpaks()
 {
-    flatpak install com.github.tchx84.Flatseal -y
-    flatpak install flathub org.onlyoffice.desktopeditors -y
-}
-
-install_dropbox() {
-    wget -O dropbox.deb https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2024.04.17_amd64.deb
-    sudo apt install ./dropbox.deb -y
+    flatpak install flathub com.github.tchx84.Flatseal -y    
 }
 
 install_google_chrome() {
