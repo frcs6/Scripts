@@ -14,12 +14,6 @@ install_dropbox() {
     sudo apt install ./dropbox.deb -y
 }
 
-replace_libreoffice() {
-    snap remove --purge libreoffice
-    sudo apt autoremove libreoffice*
-    flatpak install flathub org.onlyoffice.desktopeditors -y
-}
-
 mkdir ~/tmp
 pushd ~/tmp
 
@@ -30,7 +24,6 @@ install_insync nautilus
 install_base_softwares
 snap install spotify
 
-#replace_libreoffice
 #install_dropbox
 #install_asus_camera
 #install_yoga_drivers
@@ -48,7 +41,6 @@ sudo apt install timeshift -y
 sudo apt install file-roller -y
 
 #configure_flatpak # Need logout
-#install_base_flatpaks
 
 popd
 rm -rf ~/tmp
