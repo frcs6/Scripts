@@ -24,6 +24,9 @@ install_spotify
 #install_yoga_drivers
 #install_games
 
+sudo apt install yaru-cinnamon-theme-gtk yaru-cinnamon-theme-icon -y
+sudo apt install arc-theme -y
+
 sudo apt autoremove thunderbird* mintchat* -y
 
 install_base_flatpaks
