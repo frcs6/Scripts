@@ -5,7 +5,7 @@ source "$SCRIPT_DIR/common-functions.sh"
 
 replace_libreoffice() {
     snap remove --purge libreoffice
-    sudo apt autoremove libreoffice*
+    sudo apt autoremove libreoffice* -y
     flatpak install flathub org.onlyoffice.desktopeditors -y
 }
 

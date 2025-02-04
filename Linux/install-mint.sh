@@ -4,7 +4,7 @@ SCRIPT_DIR=$(dirname "${BASH_SOURCE[0]}")
 source "$SCRIPT_DIR/common-functions.sh"
 
 replace_libreoffice() {
-    sudo apt autoremove libreoffice*
+    sudo apt autoremove libreoffice* -y
     flatpak install flathub org.onlyoffice.desktopeditors -y
 }
 
@@ -24,7 +24,7 @@ install_spotify
 #install_yoga_drivers
 #install_games
 
-sudo apt autoremove thunderbird* mintchat*
+sudo apt autoremove thunderbird* mintchat* -y
 
 install_base_flatpaks
 
