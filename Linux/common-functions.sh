@@ -18,18 +18,6 @@ create_symlink() {
   fi
 }
 
-install_base_softwares() {
-    sudo apt install ubuntu-restricted-addons -y
-    sudo apt install samba -y
-    sudo apt install keepassxc -y
-    sudo apt install papirus-icon-theme -y
-}
-
-install_base_flatpaks()
-{
-    flatpak install flathub com.github.tchx84.Flatseal -y    
-}
-
 install_google_chrome() {
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
     sudo apt install ./google-chrome-stable_current_amd64.deb -y
@@ -38,8 +26,8 @@ install_google_chrome() {
 install_insync() {
   local FILE_MANAGER=$1
 
-  wget https://cdn.insynchq.com/builds/linux/3.9.4.60020/insync_3.9.4.60020-noble_amd64.deb
-  sudo apt install ./insync_3.9.4.60020-noble_amd64.deb -y
+  wget https://cdn.insynchq.com/builds/linux/3.9.6.60027/insync_3.9.6.60027-noble_amd64.deb
+  sudo apt install ./insync_3.9.6.60027-noble_amd64.deb -y
   sudo apt update
 
   if [ "$FILE_MANAGER" == "nautilus" ]; then    
@@ -77,9 +65,7 @@ install_yoga_drivers() {
     popd
 }
 
-install_games() {
-  wget https://repo.steampowered.com/steam/archive/precise/steam_latest.deb
-  sudo apt install ./steam_latest.deb -y
-  flatpak install flathub com.heroicgameslauncher.hgl -y
-  flatpak install flathub net.lutris.Lutris -y
+replace_libreoffice() {
+    sudo apt autoremove libreoffice* -y
+    flatpak install flathub org.onlyoffice.desktopeditors -y
 }

@@ -15,21 +15,18 @@ sudo apt update
 
 install_google_chrome
 install_insync nemo
-install_base_softwares
 install_spotify
 
-#replace_libreoffice
-#sudo apt install dropbox nemo-dropbox -y
-#install_asus_camera
-#install_yoga_drivers
-#install_games
+sudo apt install ubuntu-restricted-addons -y
+sudo apt install samba -y
+sudo apt install keepassxc -y
+#sudo apt install papirus-icon-theme -y
 
-sudo apt install yaru-cinnamon-theme-gtk yaru-cinnamon-theme-icon -y
-sudo apt install arc-theme -y
+replace_libreoffice
 
 sudo apt autoremove thunderbird* mintchat* -y
 
-install_base_flatpaks
+flatpak install flathub com.github.tchx84.Flatseal -y
 
 popd
 rm -rf ~/tmp
