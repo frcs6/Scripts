@@ -33,6 +33,7 @@ sudo dnf install keepassxc -y
 sudo dnf install dotnet-sdk-8.0 -y
 sudo dnf install dotnet-sdk-9.0 -y
 sudo dnf install code -y
+sudo dnf install timeshift -y
 
 sudo dnf install epapirus-icon-theme -y
 sudo dnf install libreoffice-icon-theme-papirus -y
