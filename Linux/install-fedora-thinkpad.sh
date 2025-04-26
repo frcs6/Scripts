@@ -34,6 +34,7 @@ sudo dnf install dotnet-sdk-8.0 -y
 sudo dnf install dotnet-sdk-9.0 -y
 sudo dnf install code -y
 sudo dnf install timeshift -y
+sudo dnf install homebank -y
 
 sudo dnf install epapirus-icon-theme -y
 sudo dnf install libreoffice-icon-theme-papirus -y
@@ -50,4 +51,4 @@ flatpak install flathub com.spotify.Client -y
 
 sudo dnf swap ffmpeg-free ffmpeg --allowerasing -y
 sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin -y
-
+sudo dnf install gstreamer1-plugin* -y
