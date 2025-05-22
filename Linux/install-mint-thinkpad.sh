@@ -20,9 +20,9 @@ install_spotify
 sudo apt install ubuntu-restricted-addons -y
 sudo apt install samba -y
 sudo apt install keepassxc -y
-#sudo apt install papirus-icon-theme -y
+sudo apt install papirus-icon-theme -y
 
-replace_libreoffice
+# replace_libreoffice
 
 sudo apt autoremove thunderbird* mintchat* -y
 

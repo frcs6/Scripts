@@ -14,8 +14,9 @@ pushd ~/tmp
 
 sudo apt update
 
-install_base_flatpaks
-replace_libreoffice
+flatpak install flathub com.github.tchx84.Flatseal -y
+
+# replace_libreoffice
 
 popd
 rm -rf ~/tmp

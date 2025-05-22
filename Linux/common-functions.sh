@@ -64,8 +64,3 @@ install_yoga_drivers() {
     popd
     popd
 }
-
-replace_libreoffice() {
-    sudo apt autoremove libreoffice* -y
-    flatpak install flathub org.onlyoffice.desktopeditors -y
-}
