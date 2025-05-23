@@ -23,6 +23,7 @@ snap install spotify
 sudo apt install ubuntu-restricted-addons -y
 sudo apt install samba -y
 sudo apt install keepassxc -y
+sudo apt install libfuse2t64 -y
 
 sudo apt install gnome-tweaks -y
 sudo apt install gnome-shell-extension-alphabetical-grid -y
