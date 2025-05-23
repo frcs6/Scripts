@@ -22,23 +22,25 @@ snap install spotify
 
 sudo apt install ubuntu-restricted-addons -y
 sudo apt install samba -y
-sudo apt install keepassxc -y
+# sudo apt install keepassxc -y
+sudo snap install keepassxc
 sudo apt install libfuse2t64 -y
-
 sudo apt install gnome-tweaks -y
 sudo apt install gnome-shell-extension-alphabetical-grid -y
 sudo apt install gnome-shell-extension-prefs -y
 sudo apt install gnome-shell-extensions -y
 sudo apt install timeshift -y
 sudo apt install file-roller -y
+sudo apt install inkscape -y
+sudo apt install homebank -y
 
-# sudo add-apt-repository ppa:dotnet/backports
-# sudo apt update
-# sudo apt install dotnet-sdk-8.0 -y
-# sudo apt install dotnet-sdk-9.0 -y
+sudo add-apt-repository ppa:dotnet/backports
+sudo apt update
+sudo apt install dotnet-sdk-8.0 -y
+sudo apt install dotnet-sdk-9.0 -y
 
-# sudo apt install papirus-icon-theme -y
-# snap install icon-theme-papirus
+sudo apt install papirus-icon-theme -y
+snap install icon-theme-papirus
 
 snap remove --purge thunderbird
 

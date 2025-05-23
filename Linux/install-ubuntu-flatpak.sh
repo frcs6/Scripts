@@ -14,8 +14,9 @@ pushd ~/tmp
 
 sudo apt update
 
-flatpak install flathub com.github.tchx84.Flatseal -y
-
+flatpak install com.github.tchx84.Flatseal -y
+flatpak install org.keepassxc.KeePassXC -y
+flatpak install org.gimp.GIMP -y
 # replace_libreoffice
 
 popd
