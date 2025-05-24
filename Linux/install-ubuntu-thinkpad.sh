@@ -20,6 +20,7 @@ install_google_chrome
 # install_insync nautilus
 
 sudo snap install spotify
+sudo snap install --classic code
 
 sudo apt install ubuntu-restricted-addons -y
 sudo apt install samba -y
