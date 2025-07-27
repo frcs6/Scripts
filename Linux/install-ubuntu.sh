@@ -17,10 +17,8 @@ echo "snap" >> ~/.hidden
 sudo apt update
 
 install_google_chrome
-# install_insync nautilus
 
 sudo snap install spotify
-sudo snap install --classic code
 
 sudo apt install ubuntu-restricted-addons -y
 sudo apt install samba -y
@@ -32,12 +30,13 @@ sudo apt install gnome-shell-extensions -y
 sudo apt install timeshift -y
 sudo apt install file-roller -y
 sudo apt install inkscape -y
-sudo apt install homebank -y
+# sudo apt install homebank -y
 
-sudo add-apt-repository ppa:dotnet/backports
-sudo apt update
-sudo apt install dotnet-sdk-8.0 -y
-sudo apt install dotnet-sdk-9.0 -y
+# sudo snap install --classic code
+# sudo add-apt-repository ppa:dotnet/backports
+# sudo apt update
+# sudo apt install dotnet-sdk-8.0 -y
+# sudo apt install dotnet-sdk-9.0 -y
 
 sudo apt install papirus-icon-theme -y
 snap install icon-theme-papirus
@@ -45,6 +44,9 @@ snap install icon-theme-papirus
 snap remove --purge thunderbird
 
 # configure_flatpak # Need logout
+
+remove_libreoffice
+install_onlyoffice
 
 popd
 rm -rf ~/tmp

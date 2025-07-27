@@ -23,31 +23,6 @@ install_google_chrome() {
     sudo apt install ./google-chrome-stable_current_amd64.deb -y
 }
 
-install_insync() {
-  local FILE_MANAGER=$1
-
-  wget https://cdn.insynchq.com/builds/linux/3.9.6.60027/insync_3.9.6.60027-noble_amd64.deb
-  sudo apt install ./insync_3.9.6.60027-noble_amd64.deb -y
-  sudo apt update
-
-  if [ "$FILE_MANAGER" == "nautilus" ]; then    
-    sudo apt install insync-nautilus -y
-  elif [ "$FILE_MANAGER" == "nemo" ]; then
-    sudo apt install insync-nemo -y
-  else
-    echo "Unsupported file manager: $FILE_MANAGER"
-    return 1
-  fi
-}
-
-install_spotify() {
-  curl -sS https://download.spotify.com/debian/pubkey_C85668DF69375001.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
-  echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-
-  sudo apt-get update
-  sudo apt-get install spotify-client
-}
-
 install_asus_camera()
 {
   sudo apt install qv4l2 -y
@@ -63,4 +38,23 @@ install_yoga_drivers() {
     sudo ./install-driver.sh
     popd
     popd
+}
+
+remove_libreoffice() {
+    snap remove --purge libreoffice
+    sudo apt autoremove libreoffice* -y
+}
+
+install_onlyoffice() {
+    mkdir -p -m 700 ~/.gnupg
+    gpg --no-default-keyring --keyring gnupg-ring:/tmp/onlyoffice.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys CB2DE8E5
+    chmod 644 /tmp/onlyoffice.gpg
+    sudo chown root:root /tmp/onlyoffice.gpg
+    sudo mv /tmp/onlyoffice.gpg /usr/share/keyrings/onlyoffice.gpg
+
+    echo 'deb [signed-by=/usr/share/keyrings/onlyoffice.gpg] https://download.onlyoffice.com/repo/debian squeeze main' | sudo tee -a /etc/apt/sources.list.d/onlyoffice.list
+
+    sudo apt-get update
+
+    sudo apt-get install onlyoffice-desktopeditors
 }
