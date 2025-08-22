@@ -30,7 +30,6 @@ sudo apt install gnome-shell-extensions -y
 sudo apt install timeshift -y
 sudo apt install file-roller -y
 sudo apt install inkscape -y
-# sudo apt install homebank -y
 
 # sudo snap install --classic code
 # sudo add-apt-repository ppa:dotnet/backports
@@ -43,7 +42,7 @@ snap install icon-theme-papirus
 
 snap remove --purge thunderbird
 
-# configure_flatpak # Need logout
+configure_flatpak # Need logout
 
 remove_libreoffice
 install_onlyoffice
