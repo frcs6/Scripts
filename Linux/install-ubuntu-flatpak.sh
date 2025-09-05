@@ -6,8 +6,6 @@ source "$SCRIPT_DIR/common-functions.sh"
 mkdir ~/tmp
 pushd ~/tmp
 
-sudo apt update
-
 flatpak install com.github.tchx84.Flatseal -y
 flatpak install org.keepassxc.KeePassXC -y
 flatpak install org.gimp.GIMP -y

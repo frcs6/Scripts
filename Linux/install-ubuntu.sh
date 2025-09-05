@@ -44,8 +44,5 @@ snap remove --purge thunderbird
 
 configure_flatpak # Need logout
 
-remove_libreoffice
-install_onlyoffice
-
 popd
 rm -rf ~/tmp
