@@ -3,12 +3,6 @@
 SCRIPT_DIR=$(dirname "${BASH_SOURCE[0]}")
 source "$SCRIPT_DIR/common-functions.sh"
 
-configure_flatpak() {
-    sudo apt install flatpak gnome-software-plugin-flatpak -y
-    flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-    snap remove --purge snap-store
-}
-
 mkdir ~/tmp
 pushd ~/tmp
 
@@ -30,12 +24,6 @@ sudo apt install gnome-shell-extensions -y
 sudo apt install timeshift -y
 sudo apt install file-roller -y
 sudo apt install inkscape -y
-
-# sudo snap install --classic code
-# sudo add-apt-repository ppa:dotnet/backports
-# sudo apt update
-# sudo apt install dotnet-sdk-8.0 -y
-# sudo apt install dotnet-sdk-9.0 -y
 
 sudo apt install papirus-icon-theme -y
 snap install icon-theme-papirus

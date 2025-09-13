@@ -18,6 +18,12 @@ create_symlink() {
   fi
 }
 
+configure_flatpak() {
+    sudo apt install flatpak gnome-software-plugin-flatpak -y
+    flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+    snap remove --purge snap-store
+}
+
 install_google_chrome() {
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
     sudo apt install ./google-chrome-stable_current_amd64.deb -y
