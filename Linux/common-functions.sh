@@ -46,11 +46,6 @@ install_yoga_drivers() {
     popd
 }
 
-remove_libreoffice() {
-    snap remove --purge libreoffice
-    sudo apt autoremove libreoffice* -y
-}
-
 install_onlyoffice() {
     mkdir -p -m 700 ~/.gnupg
     gpg --no-default-keyring --keyring gnupg-ring:/tmp/onlyoffice.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys CB2DE8E5

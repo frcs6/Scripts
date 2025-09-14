@@ -6,9 +6,13 @@ source "$SCRIPT_DIR/common-functions.sh"
 mkdir ~/tmp
 pushd ~/tmp
 
-remove_libreoffice
-flatpak install org.libreoffice.LibreOffice -y
+#snap remove --purge libreoffice
+#sudo apt autoremove libreoffice* -y
+
+#flatpak install org.libreoffice.LibreOffice -y
 #install_onlyoffice
+sudo snap install libreoffice -y
+#sudo apt install libreoffice -y
 
 popd
 rm -rf ~/tmp
