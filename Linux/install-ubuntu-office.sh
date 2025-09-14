@@ -9,10 +9,10 @@ pushd ~/tmp
 #snap remove --purge libreoffice
 #sudo apt autoremove libreoffice* -y
 
-#flatpak install org.libreoffice.LibreOffice -y
+#flatpak install org.libreoffice.LibreOffice -y # missing fr
 #install_onlyoffice
-sudo snap install libreoffice -y
-#sudo apt install libreoffice -y
+#sudo snap install libreoffice -y # slow
+sudo apt install libreoffice -y # later version
 
 popd
 rm -rf ~/tmp
