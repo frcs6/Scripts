@@ -10,27 +10,29 @@ echo "snap" >> ~/.hidden
 
 sudo apt update
 
-# Required tools
-sudo apt install ubuntu-restricted-addons -y
-sudo apt install samba -y
-sudo apt install libfuse2t64 -y
+# Software & Utilities (apt)
+sudo apt install file-roller -y
 sudo apt install gnome-tweaks -y
 sudo apt install gnome-shell-extension-alphabetical-grid -y
 sudo apt install gnome-shell-extension-prefs -y
 sudo apt install gnome-shell-extensions -y
+#sudo apt install inkscape -y
+sudo apt install libfuse2t64 -y
+sudo apt install samba -y
 sudo apt install timeshift -y
+sudo apt install ttf-mscorefonts-installer -y
+sudo apt install ubuntu-restricted-addons -y
+
+# Software & Utilities (snap)
+#sudo snap install blender --classic
+#sudo snap install --classic code
+#sudo snap install keepassxc -y
+sudo snap install spotify -y
+sudo snap install vlc -y
 
 # Google Chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.deb -y
-
-# Remove Thunderbird
-snap remove --purge thunderbird
-
-# Flatpak - Need logout
-sudo apt install flatpak gnome-software-plugin-flatpak -y
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-snap remove --purge snap-store
 
 popd
 rm -rf ~/tmp
