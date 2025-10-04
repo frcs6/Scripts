@@ -29,12 +29,22 @@ apt_install wget
 # Software & Utilities (snap)
 #snap_install blender --classic
 #snap_install --classic code
+snap_install firefox
 #snap_install keepassxc
+#snap_install msedit
+#snap_install snap-store
 snap_install spotify
+snap_install thunderbird
+#snap_install vivaldi
 snap_install vlc
 
 # Software & Utilities (flatpak)
+#flatpak_install com.github.tchx84.Flatseal 
 #flatpak_install org.gimp.GIMP
+
+# Install Papirus Icon Theme
+#apt_install papirus-icon-theme
+#snap_install icon-theme-papirus
 
 # Google Chrome
 if ! dpkg -s "google-chrome-stable" >/dev/null 2>&1; then
