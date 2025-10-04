@@ -3,36 +3,52 @@
 SCRIPT_DIR=$(dirname "${BASH_SOURCE[0]}")
 source "$SCRIPT_DIR/common-functions.sh"
 
-mkdir ~/tmp
-pushd ~/tmp
+mkdir -p ~/tmp
+pushd ~/tmp > /dev/null
 
-echo "snap" >> ~/.hidden
+touch ~/.hidden
+grep -qx "snap" ~/.hidden || echo "snap" >> ~/.hidden
 
 sudo apt update
 
 # Software & Utilities (apt)
-sudo apt install file-roller -y
-sudo apt install gnome-tweaks -y
-sudo apt install gnome-shell-extension-alphabetical-grid -y
-sudo apt install gnome-shell-extension-prefs -y
-sudo apt install gnome-shell-extensions -y
-#sudo apt install inkscape -y
-sudo apt install libfuse2t64 -y
-sudo apt install samba -y
-sudo apt install timeshift -y
-sudo apt install ttf-mscorefonts-installer -y
-sudo apt install ubuntu-restricted-addons -y
+apt_install file-roller
+apt_install gnome-tweaks
+apt_install gnome-shell-extension-alphabetical-grid
+apt_install gnome-shell-extension-prefs
+apt_install gnome-shell-extensions
+#apt_install inkscape
+apt_install libfuse2t64
+apt_install libreoffice
+apt_install samba
+apt_install timeshift
+apt_install ttf-mscorefonts-installer
+apt_install ubuntu-restricted-addons
+apt_install wget
 
 # Software & Utilities (snap)
-#sudo snap install blender --classic
-#sudo snap install --classic code
-#sudo snap install keepassxc -y
-sudo snap install spotify -y
-sudo snap install vlc -y
+#snap_install blender --classic
+#snap_install --classic code
+#snap_install keepassxc
+snap_install spotify
+snap_install vlc
+
+# Software & Utilities (flatpak)
+#flatpak_install org.gimp.GIMP
 
 # Google Chrome
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo apt install ./google-chrome-stable_current_amd64.deb -y
+if ! dpkg -s "google-chrome-stable" >/dev/null 2>&1; then
+    echo "Installation de google-chrome-stable..."
+    wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    if [[ -f google-chrome-stable_current_amd64.deb ]]; then
+        sudo apt install ./google-chrome-stable_current_amd64.deb -y
+        rm ./google-chrome-stable_current_amd64.deb
+    else
+        echo "Erreur : le fichier .deb n'a pas été téléchargé."
+    fi
+else
+    echo "google-chrome-stable est déjà installé."
+fi
 
 popd
 rm -rf ~/tmp
