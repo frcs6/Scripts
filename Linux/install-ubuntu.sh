@@ -35,7 +35,6 @@ snap_install firefox
 #snap_install snap-store
 snap_install spotify
 snap_install thunderbird
-#snap_install vivaldi
 snap_install vlc
 
 # Software & Utilities (flatpak)
