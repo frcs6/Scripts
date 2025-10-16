@@ -17,7 +17,7 @@ apt_install gnome-tweaks
 apt_install gnome-shell-extension-alphabetical-grid
 apt_install gnome-shell-extension-prefs
 apt_install gnome-shell-extensions
-#apt_install inkscape
+apt_install inkscape
 apt_install libfuse2t64
 apt_install libreoffice
 apt_install samba
@@ -27,11 +27,12 @@ apt_install ubuntu-restricted-addons
 apt_install wget
 
 # Software & Utilities (snap)
-#snap_install blender --classic
-#snap_install --classic code
+snap_install blender --classic
+snap_install --classic code
 snap_install firefox
-#snap_install keepassxc
-#snap_install msedit
+snap_install keepassxc
+snap_install msedit
+snap_install pinta
 #snap_install snap-store
 snap_install spotify
 snap_install thunderbird
@@ -42,8 +43,8 @@ snap_install vlc
 #flatpak_install org.gimp.GIMP
 
 # Install Papirus Icon Theme
-#apt_install papirus-icon-theme
-#snap_install icon-theme-papirus
+apt_install papirus-icon-theme
+snap_install icon-theme-papirus
 
 # Google Chrome
 if ! dpkg -s "google-chrome-stable" >/dev/null 2>&1; then
