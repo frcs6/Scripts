@@ -9,7 +9,6 @@ apt_install flatpak
 apt_install gnome-software
 apt_install gnome-software-plugin-flatpak
 apt_install gnome-software-plugin-snap
-apt_install libfuse2t64
 
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 sudo snap remove --purge snap-store
