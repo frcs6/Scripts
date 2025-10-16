@@ -30,6 +30,7 @@ apt_install wget
 snap_install blender --classic
 snap_install --classic code
 snap_install firefox
+snap_install gimp
 snap_install keepassxc
 snap_install msedit
 snap_install pinta

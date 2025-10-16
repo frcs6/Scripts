@@ -11,6 +11,6 @@ apt_install gnome-software-plugin-flatpak
 apt_install gnome-software-plugin-snap
 apt_install libfuse2t64
 
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-snap remove --purge snap-store
+sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+sudo snap remove --purge snap-store
 echo "Il est recommandé de se déconnecter et de se reconnecter pour que les modifications prennent effet."
