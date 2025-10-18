@@ -65,3 +65,17 @@ create_symlink() {
     echo "Target directory does not exist: $TARGET_PATH"
   fi
 }
+
+is_ubuntu() {
+    if [ "$XDG_CURRENT_DESKTOP" = "ubuntu:GNOME" ] || [ "$XDG_CURRENT_DESKTOP" = "GNOME" ] || [ "$XDG_CURRENT_DESKTOP" = "Unity" ]; then
+        return 0
+    fi
+    return 1
+}
+
+is_kubuntu() {
+    if [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
+        return 0
+    fi
+    return 1
+}

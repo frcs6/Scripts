@@ -12,11 +12,13 @@ grep -qx "snap" ~/.hidden || echo "snap" >> ~/.hidden
 sudo apt update
 
 # Software & Utilities (apt)
-apt_install file-roller
-apt_install gnome-tweaks
-apt_install gnome-shell-extension-alphabetical-grid
-apt_install gnome-shell-extension-prefs
-apt_install gnome-shell-extensions
+if is_ubuntu; then
+    apt_install file-roller
+    apt_install gnome-tweaks
+    apt_install gnome-shell-extension-alphabetical-grid
+    apt_install gnome-shell-extension-prefs
+    apt_install gnome-shell-extensions
+fi
 apt_install inkscape
 apt_install libfuse2t64
 apt_install libreoffice
