@@ -28,6 +28,26 @@ apt_install ttf-mscorefonts-installer
 apt_install ubuntu-restricted-addons
 apt_install wget
 
+# Language Support
+sudo apt install hunspell-en* -y
+sudo apt install hunspell-fr* -y
+sudo apt install hyphen-en* -y
+sudo apt install hyphen-fr* -y
+sudo apt install language-pack-en* -y
+sudo apt install language-pack-fr* -y
+sudo apt install libreoffice-help-en* -y
+sudo apt install libreoffice-help-fr* -y
+sudo apt install libreoffice-l10n-en* -y
+sudo apt install libreoffice-l10n-fr* -y
+sudo apt install mythes-en* -y
+sudo apt install mythes-fr* -y
+sudo apt install aspell-en* -y
+sudo apt install aspell-fr* -y
+sudo apt install wamerican -y
+sudo apt install wbritish -y
+sudo apt install wcanadian -y
+sudo apt install wfrench -y
+
 # Software & Utilities (snap)
 snap_install blender --classic
 snap_install --classic code
