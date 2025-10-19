@@ -29,30 +29,30 @@ apt_install ubuntu-restricted-addons
 apt_install wget
 
 # Language Support
-sudo apt install hunspell-en* -y
-sudo apt install hunspell-fr* -y
-sudo apt install hyphen-en* -y
-sudo apt install hyphen-fr* -y
-sudo apt install language-pack-en* -y
-sudo apt install language-pack-fr* -y
-sudo apt install libreoffice-help-en* -y
-sudo apt install libreoffice-help-fr* -y
-sudo apt install libreoffice-l10n-en* -y
-sudo apt install libreoffice-l10n-fr* -y
-sudo apt install mythes-en* -y
-sudo apt install mythes-fr* -y
-sudo apt install aspell-en* -y
-sudo apt install aspell-fr* -y
-sudo apt install wamerican -y
-sudo apt install wbritish -y
-sudo apt install wcanadian -y
-sudo apt install wfrench -y
+apt_install hunspell-en-ca
+apt_install hunspell-en-us
+apt_install hunspell-fr
+apt_install hyphen-en-ca
+apt_install hyphen-en-us
+apt_install hyphen-fr
+apt_install language-pack-en
+apt_install language-pack-fr
+apt_install libreoffice-help-en-us
+apt_install libreoffice-help-fr
+apt_install libreoffice-l10n-fr
+apt_install mythes-en-us
+apt_install mythes-fr
+apt_install aspell-en
+apt_install aspell-fr
+apt_install wamerican
+apt_install wcanadian
+apt_install wfrench
 
 # Software & Utilities (snap)
 snap_install blender --classic
 snap_install --classic code
 snap_install firefox
-snap_install gimp
+snap_install gimpcle
 snap_install keepassxc
 snap_install msedit
 snap_install pinta
@@ -74,7 +74,7 @@ if ! dpkg -s "google-chrome-stable" >/dev/null 2>&1; then
     echo "Installation de google-chrome-stable..."
     wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
     if [[ -f google-chrome-stable_current_amd64.deb ]]; then
-        sudo apt install ./google-chrome-stable_current_amd64.deb -y
+        apt_install ./google-chrome-stable_current_amd64.deb
         rm ./google-chrome-stable_current_amd64.deb
     else
         echo "Erreur : le fichier .deb n'a pas été téléchargé."
