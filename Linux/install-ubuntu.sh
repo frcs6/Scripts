@@ -15,6 +15,17 @@ sudo apt upgrade -y
 sudo snap refresh
 sudo flatpak update -y
 
+# Suppression des paquets inutiles
+apt_remove hunspell-en-au
+apt_remove hunspell-en-gb
+apt_remove hunspell-en-med
+apt_remove hunspell-en-za
+apt_remove hunspell-fr-revised
+apt_remove libreoffice-l10n-en-gb
+apt_remove libreoffice-l10n-en-za
+apt_remove mythes-en-au
+apt_remove wbritish
+
 # Software & Utilities (apt)
 if is_ubuntu; then
     apt_install file-roller
@@ -90,10 +101,10 @@ fi
 popd
 rm -rf ~/tmp
 
+# Nettoyage final
 sudo apt autoremove --purge -y
 sudo apt autopurge -y
 sudo apt autoremove -y
-
 if command -v flatpak >/dev/null 2>&1; then
     flatpak uninstall --unused -y
 fi
