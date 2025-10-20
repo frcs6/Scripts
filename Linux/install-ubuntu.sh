@@ -10,6 +10,10 @@ touch ~/.hidden
 grep -qx "snap" ~/.hidden || echo "snap" >> ~/.hidden
 
 sudo apt update
+sudo apt upgrade -y
+
+sudo snap refresh
+sudo flatpak update -y
 
 # Software & Utilities (apt)
 if is_ubuntu; then
@@ -50,9 +54,9 @@ apt_install wfrench
 
 # Software & Utilities (snap)
 snap_install blender --classic
-snap_install --classic code
+snap_install code --classic
 snap_install firefox
-snap_install gimpcle
+snap_install gimp
 snap_install keepassxc
 snap_install msedit
 snap_install pinta
@@ -62,12 +66,12 @@ snap_install thunderbird
 snap_install vlc
 
 # Software & Utilities (flatpak)
-#flatpak_install com.github.tchx84.Flatseal 
-#flatpak_install org.gimp.GIMP
+flatpak_uninstall com.github.tchx84.Flatseal 
+flatpak_uninstall org.gimp.GIMP
 
 # Install Papirus Icon Theme
-apt_install papirus-icon-theme
-snap_install icon-theme-papirus
+apt_remove papirus-icon-theme
+snap_remove icon-theme-papirus
 
 # Google Chrome
 if ! dpkg -s "google-chrome-stable" >/dev/null 2>&1; then
@@ -85,3 +89,11 @@ fi
 
 popd
 rm -rf ~/tmp
+
+sudo apt autoremove --purge -y
+sudo apt autopurge -y
+sudo apt autoremove -y
+
+if command -v flatpak >/dev/null 2>&1; then
+    flatpak uninstall --unused -y
+fi

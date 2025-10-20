@@ -17,5 +17,7 @@ elif is_kubuntu; then
 fi
 
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-sudo snap remove --purge snap-store
+
+snap_remove snap-store
+
 echo "Il est recommandé de se déconnecter et de se reconnecter pour que les modifications prennent effet."
