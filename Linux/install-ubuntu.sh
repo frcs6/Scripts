@@ -80,6 +80,7 @@ flatpak_install com.github.PintaProject.Pinta
 flatpak_install com.github.tchx84.Flatseal 
 flatpak_install org.gimp.GIMP
 flatpak_install org.inkscape.Inkscape
+flatpak_install org.kde.krita
 flatpak_install org.keepassxc.KeePassXC
 
 # Install Papirus Icon Theme
