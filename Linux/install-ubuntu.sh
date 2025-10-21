@@ -15,19 +15,6 @@ sudo apt upgrade -y
 sudo snap refresh
 sudo flatpak update -y
 
-# Suppression des paquets inutiles
-apt_remove hunspell-en-au
-apt_remove hunspell-en-gb
-apt_remove hunspell-en-med
-apt_remove hunspell-en-za
-apt_remove hunspell-fr-revised
-apt_remove libreoffice-l10n-en-gb
-apt_remove libreoffice-l10n-en-za
-apt_remove mythes-en-au
-apt_remove wbritish
-apt_remove inkscape
-snap_remove blender
-
 # Software & Utilities (apt)
 if is_ubuntu; then
     apt_install file-roller
@@ -43,6 +30,20 @@ apt_install timeshift
 apt_install ttf-mscorefonts-installer
 apt_install ubuntu-restricted-addons
 apt_install wget
+
+# Software & Utilities (snap)
+snap_install firefox
+snap_install spotify
+snap_install thunderbird
+snap_install vlc
+
+# Software & Utilities (flatpak)
+flatpak_install com.github.PintaProject.Pinta
+flatpak_install com.github.tchx84.Flatseal 
+flatpak_install org.gimp.GIMP
+flatpak_install org.inkscape.Inkscape
+flatpak_install org.kde.krita
+flatpak_install org.keepassxc.KeePassXC
 
 # Language Support
 apt_install hunspell-en-ca
@@ -63,29 +64,6 @@ apt_install aspell-fr
 apt_install wamerican
 apt_install wcanadian
 apt_install wfrench
-
-# Software & Utilities (snap)
-#snap_install snap-store
-snap_install firefox
-snap_install spotify
-snap_install thunderbird
-snap_install vlc
-snap_remove gimp
-snap_remove keepassxc
-snap_remove msedit
-snap_remove pinta
-
-# Software & Utilities (flatpak)
-flatpak_install com.github.PintaProject.Pinta
-flatpak_install com.github.tchx84.Flatseal 
-flatpak_install org.gimp.GIMP
-flatpak_install org.inkscape.Inkscape
-flatpak_install org.kde.krita
-flatpak_install org.keepassxc.KeePassXC
-
-# Install Papirus Icon Theme
-apt_remove papirus-icon-theme
-snap_remove icon-theme-papirus
 
 # Google Chrome
 if ! dpkg -s "google-chrome-stable" >/dev/null 2>&1; then
