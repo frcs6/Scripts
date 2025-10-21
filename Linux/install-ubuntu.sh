@@ -66,7 +66,6 @@ apt_install wfrench
 # Software & Utilities (snap)
 #snap_install snap-store
 snap_install blender --classic
-snap_install code --classic
 snap_install firefox
 snap_install spotify
 snap_install thunderbird
