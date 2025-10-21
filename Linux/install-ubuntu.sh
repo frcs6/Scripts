@@ -25,10 +25,7 @@ apt_remove libreoffice-l10n-en-gb
 apt_remove libreoffice-l10n-en-za
 apt_remove mythes-en-au
 apt_remove wbritish
-snap_remove gimp
-snap_remove keepassxc
-snap_remove msedit
-snap_remove pinta
+apt_remove inkscape
 
 # Software & Utilities (apt)
 if is_ubuntu; then
@@ -38,7 +35,6 @@ if is_ubuntu; then
     apt_install gnome-shell-extension-prefs
     apt_install gnome-shell-extensions
 fi
-apt_remove inkscape
 apt_install libfuse2t64
 apt_install libreoffice
 apt_install samba
@@ -68,13 +64,17 @@ apt_install wcanadian
 apt_install wfrench
 
 # Software & Utilities (snap)
+#snap_install snap-store
 snap_install blender --classic
 snap_install code --classic
 snap_install firefox
-#snap_install snap-store
 snap_install spotify
 snap_install thunderbird
 snap_install vlc
+snap_remove gimp
+snap_remove keepassxc
+snap_remove msedit
+snap_remove pinta
 
 # Software & Utilities (flatpak)
 flatpak_install com.github.PintaProject.Pinta
