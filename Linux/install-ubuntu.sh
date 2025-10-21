@@ -26,6 +26,7 @@ apt_remove libreoffice-l10n-en-za
 apt_remove mythes-en-au
 apt_remove wbritish
 apt_remove inkscape
+snap_remove blender
 
 # Software & Utilities (apt)
 if is_ubuntu; then
@@ -65,7 +66,6 @@ apt_install wfrench
 
 # Software & Utilities (snap)
 #snap_install snap-store
-snap_install blender --classic
 snap_install firefox
 snap_install spotify
 snap_install thunderbird
