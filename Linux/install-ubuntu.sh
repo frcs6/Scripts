@@ -25,6 +25,10 @@ apt_remove libreoffice-l10n-en-gb
 apt_remove libreoffice-l10n-en-za
 apt_remove mythes-en-au
 apt_remove wbritish
+snap_remove gimp
+snap_remove keepassxc
+snap_remove msedit
+snap_remove pinta
 
 # Software & Utilities (apt)
 if is_ubuntu; then
@@ -34,7 +38,7 @@ if is_ubuntu; then
     apt_install gnome-shell-extension-prefs
     apt_install gnome-shell-extensions
 fi
-apt_install inkscape
+apt_remove inkscape
 apt_install libfuse2t64
 apt_install libreoffice
 apt_install samba
@@ -67,18 +71,17 @@ apt_install wfrench
 snap_install blender --classic
 snap_install code --classic
 snap_install firefox
-snap_install gimp
-snap_install keepassxc
-snap_install msedit
-snap_install pinta
 #snap_install snap-store
 snap_install spotify
 snap_install thunderbird
 snap_install vlc
 
 # Software & Utilities (flatpak)
-flatpak_uninstall com.github.tchx84.Flatseal 
-flatpak_uninstall org.gimp.GIMP
+flatpak_install com.github.PintaProject.Pinta
+flatpak_install com.github.tchx84.Flatseal 
+flatpak_install org.gimp.GIMP
+flatpak_install org.inkscape.Inkscape
+flatpak_install org.keepassxc.KeePassXC
 
 # Install Papirus Icon Theme
 apt_remove papirus-icon-theme

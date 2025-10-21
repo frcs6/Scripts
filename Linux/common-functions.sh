@@ -62,7 +62,7 @@ flatpak_install() {
         echo "Le flatpak $package est déjà installé."
     else
         echo "Installation du flatpak $package..."
-        flatpak install "$package" -y
+        flatpak install flathub "$package" -y
     fi
 }
 
