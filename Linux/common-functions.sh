@@ -59,7 +59,7 @@ flatpak_install() {
     fi
 
     if flatpak info "$package" >/dev/null 2>&1; then
-        echo "Le flatpak $package est déjà installé."
+        echo "flatpak: $package est déjà installé."
     else
         echo "Installation du flatpak $package..."
         flatpak install flathub "$package" -y
@@ -78,7 +78,7 @@ flatpak_uninstall() {
         echo "Suppression du flatpak $package..."
         flatpak uninstall --delete-data "$package" -y
     else
-        echo "Le flatpak $package est déjà supprimé."
+        echo "flatpak: $package est déjà supprimé."
     fi
 }
 

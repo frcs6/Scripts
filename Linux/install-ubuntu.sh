@@ -34,15 +34,12 @@ apt_install wget
 # Software & Utilities (snap)
 snap_install firefox
 snap_install spotify
-snap_install thunderbird
 snap_install vlc
+snap_remove thunderbird
 
 # Software & Utilities (flatpak)
 flatpak_install com.github.PintaProject.Pinta
-flatpak_install com.github.tchx84.Flatseal 
 flatpak_install org.gimp.GIMP
-flatpak_install org.inkscape.Inkscape
-flatpak_install org.kde.krita
 flatpak_install org.keepassxc.KeePassXC
 
 # Language Support
