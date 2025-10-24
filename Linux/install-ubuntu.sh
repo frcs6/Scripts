@@ -38,8 +38,6 @@ snap_install vlc
 snap_remove thunderbird
 
 # Software & Utilities (flatpak)
-flatpak_install com.github.PintaProject.Pinta
-flatpak_install org.gimp.GIMP
 flatpak_install org.keepassxc.KeePassXC
 
 # Language Support
