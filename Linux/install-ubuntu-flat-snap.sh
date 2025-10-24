@@ -5,7 +5,12 @@ source "$SCRIPT_DIR/common-functions.sh"
 
 sudo apt update
 
+touch ~/.hidden
+grep -qx "snap" ~/.hidden || echo "snap" >> ~/.hidden
+
 apt_install flatpak
+apt_install snapd
+
 if is_ubuntu; then
     apt_install gnome-software
     apt_install gnome-software-plugin-flatpak

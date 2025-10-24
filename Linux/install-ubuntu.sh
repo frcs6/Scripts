@@ -3,15 +3,8 @@
 SCRIPT_DIR=$(dirname "${BASH_SOURCE[0]}")
 source "$SCRIPT_DIR/common-functions.sh"
 
-mkdir -p ~/tmp
-pushd ~/tmp > /dev/null
-
-touch ~/.hidden
-grep -qx "snap" ~/.hidden || echo "snap" >> ~/.hidden
-
 sudo apt update
 sudo apt upgrade -y
-
 sudo snap refresh
 sudo flatpak update -y
 
@@ -59,6 +52,9 @@ apt_install aspell-fr
 apt_install wamerican
 apt_install wcanadian
 apt_install wfrench
+
+mkdir -p ~/tmp
+pushd ~/tmp > /dev/null
 
 # Google Chrome
 if ! dpkg -s "google-chrome-stable" >/dev/null 2>&1; then
