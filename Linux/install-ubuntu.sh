@@ -11,11 +11,17 @@ sudo flatpak update -y
 # Software & Utilities (apt)
 if is_ubuntu; then
     apt_install file-roller
-    apt_install gnome-tweaks
+    apt_install gnome-calendar
+    apt_install gnome-contacts
+    apt_install gnome-games
+    apt_install gnome-maps
     apt_install gnome-shell-extension-alphabetical-grid
     apt_install gnome-shell-extension-prefs
     apt_install gnome-shell-extensions
+    apt_install gnome-tweaks
+    apt_install gnome-weather
 fi
+
 apt_install libfuse2t64
 apt_install libreoffice
 apt_install samba
