@@ -11,10 +11,18 @@ sudo flatpak update -y
 # Software & Utilities (apt)
 if is_ubuntu; then
     apt_install file-roller
+    apt_install gnome-calendar
+    apt_install gnome-contacts
+    apt_install gnome-games
+    apt_install gnome-maps
     apt_install gnome-shell-extension-alphabetical-grid
     apt_install gnome-shell-extension-prefs
     apt_install gnome-shell-extensions
     apt_install gnome-tweaks
+    apt_install gnome-weather
+elif is_kubuntu; then
+    apt_install kdegames
+    apt_install marble
 fi
 
 apt_install libfuse2t64
@@ -27,7 +35,12 @@ apt_install wget
 
 # Software & Utilities (snap)
 snap_install firefox
+snap_install spotify
+snap_install vlc
 snap_remove thunderbird
+
+# Software & Utilities (flatpak)
+flatpak_install org.keepassxc.KeePassXC
 
 # Language Support
 apt_install hunspell-en-ca
