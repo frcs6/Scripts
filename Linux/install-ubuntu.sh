@@ -20,6 +20,12 @@ if is_ubuntu; then
     apt_install gnome-shell-extensions
     apt_install gnome-tweaks
     apt_install gnome-weather
+elif is_kubuntu; then
+    apt_install korganizer
+    apt_install kaddressbook
+    apt_install kdegames 
+    apt_install kweather 
+    apt_install marble 
 fi
 
 apt_install libfuse2t64
