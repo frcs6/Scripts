@@ -113,3 +113,10 @@ is_kubuntu() {
     fi
     return 1
 }
+
+is_cosmic() {
+    if [ "$XDG_CURRENT_DESKTOP" = "COSMIC" ]; then
+        return 0
+    fi
+    return 1
+}

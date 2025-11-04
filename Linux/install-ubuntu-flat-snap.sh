@@ -23,6 +23,4 @@ fi
 
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
-snap_remove snap-store
-
 echo "Il est recommandé de se déconnecter et de se reconnecter pour que les modifications prennent effet."

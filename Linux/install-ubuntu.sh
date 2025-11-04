@@ -13,16 +13,20 @@ if is_ubuntu; then
     apt_install file-roller
     apt_install gnome-calendar
     apt_install gnome-contacts
-    apt_install gnome-games
     apt_install gnome-maps
     apt_install gnome-shell-extension-alphabetical-grid
     apt_install gnome-shell-extension-prefs
     apt_install gnome-shell-extensions
     apt_install gnome-tweaks
     apt_install gnome-weather
+    snap_remove snap-store
 elif is_kubuntu; then
     apt_install kdegames
     apt_install marble
+    snap_remove snap-store
+elif is_cosmic; then
+    apt_install gnome-games
+    snap_install snap-store
 fi
 
 apt_install libfuse2t64
@@ -34,13 +38,18 @@ apt_install ubuntu-restricted-addons
 apt_install wget
 
 # Software & Utilities (snap)
-snap_install firefox
-snap_install spotify
-snap_install vlc
-snap_remove thunderbird
+if ! is_cosmic; then
+    snap_install firefox
+    snap_install spotify
+    snap_install vlc
+fi
 
 # Software & Utilities (flatpak)
 flatpak_install org.keepassxc.KeePassXC
+if is_cosmic; then
+    flatpak_install com.spotify.Client
+    flatpak_install org.videolan.VLC
+fi
 
 # Language Support
 apt_install hunspell-en-ca
