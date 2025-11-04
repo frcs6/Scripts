@@ -30,7 +30,6 @@ elif is_cosmic; then
 fi
 
 apt_install libfuse2t64
-apt_install libreoffice
 apt_install samba
 apt_install timeshift
 apt_install ttf-mscorefonts-installer
