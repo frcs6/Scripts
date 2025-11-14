@@ -40,7 +40,8 @@ apt_install wget
 if ! is_cosmic; then
     snap_install firefox
     snap_install spotify
-    snap_install vlc
+    snap_remove vlc
+    apt_install vlc
 fi
 
 # Software & Utilities (flatpak)
