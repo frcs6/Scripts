@@ -35,6 +35,8 @@ apt_install timeshift
 apt_install ttf-mscorefonts-installer
 apt_install ubuntu-restricted-addons
 apt_install wget
+apt_install gstreamer1.0-plugins-bad
+apt_install gstreamer1.0-libav
 
 # Software & Utilities (snap)
 if ! is_cosmic; then
