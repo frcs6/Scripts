@@ -5,8 +5,12 @@ source "$SCRIPT_DIR/common-functions.sh"
 
 sudo apt update
 sudo apt upgrade -y
-sudo snap refresh
-sudo flatpak update -y
+if command -v snap >/dev/null 2>&1; then
+    sudo snap refresh
+fi
+if command -v flatpak >/dev/null 2>&1; then
+    sudo flatpak update -y
+fi
 
 # TODEL
 snap_remove vlc
