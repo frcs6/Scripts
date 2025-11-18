@@ -13,7 +13,9 @@ if command -v flatpak >/dev/null 2>&1; then
 fi
 
 # TODEL
-snap_remove vlc
+if command -v snap >/dev/null 2>&1; then
+    snap_remove vlc
+fi
 # TODEL
 
 if is_ubuntu; then
