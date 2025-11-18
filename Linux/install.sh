@@ -37,7 +37,6 @@ elif is_cosmic; then
     apt_install gnome-games
     #snap_install snap-store
     flatpak_install com.spotify.Client
-fi
 elif is_mint; then
     apt_install gnome-games
     #snap_install snap-store
