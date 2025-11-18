@@ -34,6 +34,11 @@ elif is_cosmic; then
     #snap_install snap-store
     flatpak_install com.spotify.Client
 fi
+elif is_mint; then
+    apt_install gnome-games
+    #snap_install snap-store
+    apt_install spotify-client
+fi
 
 apt_install libfuse2t64
 apt_install samba
@@ -45,7 +50,6 @@ apt_install wget
 apt_install gstreamer1.0-plugins-bad
 apt_install gstreamer1.0-libav
 flatpak_install org.keepassxc.KeePassXC
-# flatpak_install org.videolan.VLC
 
 # Language Support
 apt_install hunspell-en-ca
