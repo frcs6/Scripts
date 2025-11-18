@@ -8,7 +8,10 @@ sudo apt upgrade -y
 sudo snap refresh
 sudo flatpak update -y
 
-# Software & Utilities (apt)
+# TODEL
+snap_remove vlc
+# TODEL
+
 if is_ubuntu; then
     apt_install file-roller
     apt_install gnome-calendar
@@ -19,14 +22,17 @@ if is_ubuntu; then
     apt_install gnome-shell-extensions
     apt_install gnome-tweaks
     apt_install gnome-weather
+    snap_install spotify
     snap_remove snap-store
 elif is_kubuntu; then
     apt_install kdegames
     apt_install marble
+    snap_install spotify
     snap_remove snap-store
 elif is_cosmic; then
     apt_install gnome-games
-    snap_install snap-store
+    #snap_install snap-store
+    flatpak_install com.spotify.Client
 fi
 
 apt_install libfuse2t64
@@ -34,24 +40,12 @@ apt_install samba
 apt_install timeshift
 apt_install ttf-mscorefonts-installer
 apt_install ubuntu-restricted-addons
+apt_install vlc
 apt_install wget
 apt_install gstreamer1.0-plugins-bad
 apt_install gstreamer1.0-libav
-
-# Software & Utilities (snap)
-if ! is_cosmic; then
-    snap_install firefox
-    snap_install spotify
-    snap_remove vlc
-    apt_install vlc
-fi
-
-# Software & Utilities (flatpak)
 flatpak_install org.keepassxc.KeePassXC
-if is_cosmic; then
-    flatpak_install com.spotify.Client
-    flatpak_install org.videolan.VLC
-fi
+# flatpak_install org.videolan.VLC
 
 # Language Support
 apt_install hunspell-en-ca
