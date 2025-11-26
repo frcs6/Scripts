@@ -10,8 +10,8 @@ fi
 if command -v dnf >/dev/null 2>&1; then
     sudo dnf upgrade -y
     if ! rpm -q rpmfusion-free-release >/dev/null 2>&1; then
-        sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-        sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+        sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y
+        sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
     fi
 fi
 if command -v snap >/dev/null 2>&1; then
