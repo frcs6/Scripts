@@ -12,6 +12,7 @@ if command -v dnf >/dev/null 2>&1; then
     if ! rpm -q rpmfusion-free-release >/dev/null 2>&1; then
         sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y
         sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
+        sudo dnf update
     fi
 fi
 if command -v snap >/dev/null 2>&1; then
@@ -87,9 +88,18 @@ fi
 if command -v dnf >/dev/null 2>&1; then
     dnf_install fuse3-libs
     dnf_install gamemode
+    dnf_install mscore-fonts-all
     dnf_install samba
     dnf_install timeshift
-
+    dnf_install vlc
+    dnf_install wget
+    dnf_install gstreamer1-plugins-base
+    dnf_install gstreamer1-plugins-good
+    dnf_install gstreamer1-plugins-bad-free
+    dnf_install gstreamer1-plugins-ugly-free
+    dnf_install gstreamer1-plugins-bad-freeworld
+    dnf_install gstreamer1-plugins-ugly
+    dnf_install gstreamer1-libav
 fi
 flatpak_install org.keepassxc.KeePassXC
 
