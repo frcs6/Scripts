@@ -53,8 +53,7 @@ elif is_fedora; then
     dnf_install gnome-calendar
     dnf_install gnome-contacts
     dnf_install gnome-maps
-    dnf_install gnome-shell-extensions
-    dnf_install gnome-shell-extensions-app
+    dnf_install gnome-extensions-app
     dnf_install gnome-shell-extension-appindicator
     dnf_install gnome-shell-extension-apps-menu
     dnf_install gnome-shell-extension-dash-to-dock
