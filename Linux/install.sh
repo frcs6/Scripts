@@ -3,8 +3,13 @@
 SCRIPT_DIR=$(dirname "${BASH_SOURCE[0]}")
 source "$SCRIPT_DIR/common-functions.sh"
 
-sudo apt update
-sudo apt upgrade -y
+if command -v apt >/dev/null 2>&1; then
+    sudo apt update
+    sudo apt upgrade -y
+fi
+if command -v dnf >/dev/null 2>&1; then
+    sudo dnf upgrade -y
+fi
 if command -v snap >/dev/null 2>&1; then
     sudo snap refresh
 fi
@@ -37,69 +42,82 @@ elif is_kubuntu; then
     snap_remove snap-store
 elif is_cosmic; then
     apt_install gnome-games
-    #snap_install snap-store
     flatpak_install com.spotify.Client
 elif is_mint; then
     apt_install gnome-games
-    #snap_install snap-store
     apt_install spotify-client
+elif is_fedora; then
+    dnf_install file-roller
+    dnf_install file-roller-nautilus
 fi
 
-apt_install libfuse2t64
-apt_install samba
-apt_install timeshift
-apt_install ttf-mscorefonts-installer
-apt_install ubuntu-restricted-addons
-apt_install vlc
-apt_install wget
-apt_install gstreamer1.0-plugins-bad
-apt_install gstreamer1.0-libav
+if command -v apt >/dev/null 2>&1; then
+    apt_install libfuse2t64
+    apt_install samba
+    apt_install timeshift
+    apt_install ttf-mscorefonts-installer
+    apt_install ubuntu-restricted-addons
+    apt_install vlc
+    apt_install wget
+    apt_install gstreamer1.0-plugins-bad
+    apt_install gstreamer1.0-libav
+fi
 flatpak_install org.keepassxc.KeePassXC
 
 # Language Support
-apt_install hunspell-en-ca
-apt_install hunspell-en-us
-apt_install hunspell-fr
-apt_install hyphen-en-ca
-apt_install hyphen-en-us
-apt_install hyphen-fr
-apt_install language-pack-en
-apt_install language-pack-fr
-apt_install libreoffice-help-en-us
-apt_install libreoffice-help-fr
-apt_install libreoffice-l10n-fr
-apt_install mythes-en-us
-apt_install mythes-fr
-apt_install aspell-en
-apt_install aspell-fr
-apt_install wamerican
-apt_install wcanadian
-apt_install wfrench
+if command -v apt >/dev/null 2>&1; then
+    apt_install hunspell-en-ca
+    apt_install hunspell-en-us
+    apt_install hunspell-fr
+    apt_install hyphen-en-ca
+    apt_install hyphen-en-us
+    apt_install hyphen-fr
+    apt_install language-pack-en
+    apt_install language-pack-fr
+    apt_install libreoffice-help-en-us
+    apt_install libreoffice-help-fr
+    apt_install libreoffice-l10n-fr
+    apt_install mythes-en-us
+    apt_install mythes-fr
+    apt_install aspell-en
+    apt_install aspell-fr
+    apt_install wamerican
+    apt_install wcanadian
+    apt_install wfrench
+fi
 
 mkdir -p ~/tmp
 pushd ~/tmp > /dev/null
 
 # Google Chrome
-if ! dpkg -s "google-chrome-stable" >/dev/null 2>&1; then
-    echo "Installation de google-chrome-stable..."
-    wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    if [[ -f google-chrome-stable_current_amd64.deb ]]; then
-        apt_install ./google-chrome-stable_current_amd64.deb
-        rm ./google-chrome-stable_current_amd64.deb
+if command -v apt >/dev/null 2>&1; then
+    if ! dpkg -s "google-chrome-stable" >/dev/null 2>&1; then
+        echo "Installation de google-chrome-stable..."
+        wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+        if [[ -f google-chrome-stable_current_amd64.deb ]]; then
+            apt_install ./google-chrome-stable_current_amd64.deb
+            rm ./google-chrome-stable_current_amd64.deb
+        else
+            echo "Erreur : le fichier .deb n'a pas été téléchargé."
+        fi
     else
-        echo "Erreur : le fichier .deb n'a pas été téléchargé."
+        echo "google-chrome-stable est déjà installé."
     fi
-else
-    echo "google-chrome-stable est déjà installé."
 fi
 
 popd
 rm -rf ~/tmp
 
 # Nettoyage final
-sudo apt autoremove --purge -y
-sudo apt autopurge -y
-sudo apt autoremove -y
+if command -v apt >/dev/null 2>&1; then
+    sudo apt autoremove --purge -y
+    sudo apt autopurge -y
+    sudo apt autoremove -y
+fi
+if command -v dnf >/dev/null 2>&1; then
+    sudo dnf autoremove -y
+    sudo dnf clean all
+fi
 if command -v flatpak >/dev/null 2>&1; then
     flatpak uninstall --unused -y
 fi
