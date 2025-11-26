@@ -71,7 +71,6 @@ elif is_fedora; then
     dnf_install gnome-tweaks
     dnf_install gnome-weather
     flatpak_install com.spotify.Client
-    #TODO dnf_install gnome-games
 fi
 
 if command -v apt >/dev/null 2>&1; then
@@ -88,7 +87,6 @@ fi
 if command -v dnf >/dev/null 2>&1; then
     dnf_install fuse3-libs
     dnf_install gamemode
-    dnf_remove mscore-fonts-all
     dnf_install libreoffice
     dnf_install samba
     dnf_install timeshift
@@ -124,6 +122,24 @@ if command -v apt >/dev/null 2>&1; then
     apt_install wamerican
     apt_install wcanadian
     apt_install wfrench
+fi
+if command -v dnf >/dev/null 2>&1; then
+    dnf_install hunspell-en
+    dnf_install hunspell-en-US
+    dnf_install hunspell-fr
+    dnf_install hyphen-en
+    dnf_install hyphen-fr
+    dnf_install glibc-langpack-en
+    dnf_install glibc-langpack-fr
+    dnf_install libreoffice-langpack-en
+    dnf_install libreoffice-langpack-fr
+    dnf_install libreoffice-help-en
+    dnf_install libreoffice-help-fr
+    dnf_install mythes-en
+    dnf_install mythes-fr
+    dnf_install aspell-en
+    dnf_install aspell-fr
+    dnf_install words
 fi
 
 mkdir -p ~/tmp
