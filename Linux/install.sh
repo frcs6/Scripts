@@ -89,6 +89,7 @@ if command -v dnf >/dev/null 2>&1; then
     dnf_install fuse3-libs
     dnf_install gamemode
     dnf_install mscore-fonts-all
+    dnf_install libreoffice
     dnf_install samba
     dnf_install timeshift
     dnf_install vlc
