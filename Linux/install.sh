@@ -49,6 +49,23 @@ elif is_mint; then
 elif is_fedora; then
     dnf_install file-roller
     dnf_install file-roller-nautilus
+    dnf_install gnome-calendar
+    dnf_install gnome-contacts
+    dnf_install gnome-maps
+    dnf_install gnome-shell-extensions
+    dnf_install gnome-shell-extension-appindicator
+    dnf_install gnome-shell-extension-apps-menu
+    dnf_install gnome-shell-extension-dash-to-dock
+    dnf_install gnome-shell-extension-drive-menu
+    dnf_install gnome-shell-extension-gamemode
+    dnf_install gnome-shell-extension-places-menu
+    dnf_install gnome-shell-extension-status-icons
+    dnf_install gnome-shell-extension-system-monitor
+    dnf_install gnome-shell-extension-user-theme
+    dnf_install gnome-shell-extension-window-list
+    dnf_install gnome-tweaks
+    dnf_install gnome-weather
+    flatpak_install com.spotify.Client
 fi
 
 if command -v apt >/dev/null 2>&1; then
