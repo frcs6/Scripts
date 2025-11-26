@@ -9,6 +9,10 @@ if command -v apt >/dev/null 2>&1; then
 fi
 if command -v dnf >/dev/null 2>&1; then
     sudo dnf upgrade -y
+    if ! rpm -q rpmfusion-free-release >/dev/null 2>&1; then
+        sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+        sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+    fi
 fi
 if command -v snap >/dev/null 2>&1; then
     sudo snap refresh
@@ -58,7 +62,6 @@ elif is_fedora; then
     dnf_install gnome-shell-extension-apps-menu
     dnf_install gnome-shell-extension-dash-to-dock
     dnf_install gnome-shell-extension-drive-menu
-    dnf_install gnome-shell-extension-gamemode
     dnf_install gnome-shell-extension-places-menu
     dnf_install gnome-shell-extension-status-icons
     dnf_install gnome-shell-extension-system-monitor
@@ -82,7 +85,11 @@ if command -v apt >/dev/null 2>&1; then
     apt_install gstreamer1.0-libav
 fi
 if command -v dnf >/dev/null 2>&1; then
+    dnf_install fuse3-libs
     dnf_install gamemode
+    dnf_install samba
+    dnf_install timeshift
+
 fi
 flatpak_install org.keepassxc.KeePassXC
 
