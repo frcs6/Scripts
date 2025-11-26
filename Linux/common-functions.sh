@@ -101,9 +101,16 @@ create_symlink() {
 }
 
 is_ubuntu() {
-    if [ "$XDG_CURRENT_DESKTOP" = "ubuntu:GNOME" ] || [ "$XDG_CURRENT_DESKTOP" = "GNOME" ] || [ "$XDG_CURRENT_DESKTOP" = "Unity" ]; then
-        return 0
+    if [ -f /etc/os-release ]; then
+        . /etc/os-release
+        case "$ID" in
+            ubuntu) return 0 ;;
+        esac
+        case "$ID_LIKE" in
+            *ubuntu*|*debian*) return 0 ;;
+        esac
     fi
+
     return 1
 }
 
@@ -124,6 +131,20 @@ is_mint() {
 is_cosmic() {
     if [ "$XDG_CURRENT_DESKTOP" = "COSMIC" ]; then
         return 0
+    fi
+    return 1
+}
+
+is_fedora() {
+    # Vérifie /etc/os-release (ID / ID_LIKE) pour détecter Fedora/RHEL
+    if [ -f /etc/os-release ]; then
+        . /etc/os-release
+        case "$ID" in
+            fedora) return 0 ;;
+        esac
+        case "$ID_LIKE" in
+            *fedora*|*rhel*) return 0 ;;
+        esac
     fi
     return 1
 }

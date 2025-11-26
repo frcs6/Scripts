@@ -8,6 +8,7 @@ sudo apt update
 
 apt_install dotnet-sdk-8.0
 apt_install dotnet-sdk-9.0
+#apt_install dotnet-sdk-10.0
 
 snap_install code --classic
 snap_install rider --classic
