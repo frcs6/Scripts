@@ -27,6 +27,7 @@ if is_ubuntu; then
     apt_install file-roller
     apt_install gnome-calendar
     apt_install gnome-contacts
+    apt_install gnome-games
     apt_install gnome-maps
     apt_install gnome-shell-extension-alphabetical-grid
     apt_install gnome-shell-extension-prefs
@@ -53,6 +54,7 @@ elif is_fedora; then
     dnf_install gnome-contacts
     dnf_install gnome-maps
     dnf_install gnome-shell-extensions
+    dnf_install gnome-shell-extensions-app
     dnf_install gnome-shell-extension-appindicator
     dnf_install gnome-shell-extension-apps-menu
     dnf_install gnome-shell-extension-dash-to-dock
@@ -66,6 +68,7 @@ elif is_fedora; then
     dnf_install gnome-tweaks
     dnf_install gnome-weather
     flatpak_install com.spotify.Client
+    #TODO dnf_install gnome-games
 fi
 
 if command -v apt >/dev/null 2>&1; then
@@ -78,6 +81,9 @@ if command -v apt >/dev/null 2>&1; then
     apt_install wget
     apt_install gstreamer1.0-plugins-bad
     apt_install gstreamer1.0-libav
+fi
+if command -v dnf >/dev/null 2>&1; then
+    dnf_install gamemode
 fi
 flatpak_install org.keepassxc.KeePassXC
 
