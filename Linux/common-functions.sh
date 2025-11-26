@@ -25,7 +25,7 @@ apt_remove() {
 dnf_install() {
     local package="$1"
 
-    if ! sudo dnf list installed "$package" >/dev/null 2>&1; then
+    if ! sudo dnf list installed "$package" &>/dev/null; then
         echo "Installation de $package..."
         sudo dnf install "$package" -y
     else
@@ -36,7 +36,7 @@ dnf_install() {
 dnf_remove() {
     local package="$1"
 
-    if ! sudo dnf list installed "$package" >/dev/null 2>&1; then
+    if ! sudo dnf list installed "$package" &>/dev/null; then
         echo "dnf: $package est déjà supprimé."
     else
         echo "Suppression de $package..."
