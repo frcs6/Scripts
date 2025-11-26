@@ -88,19 +88,19 @@ fi
 if command -v dnf >/dev/null 2>&1; then
     dnf_install fuse3-libs
     dnf_install gamemode
-    dnf_install mscore-fonts-all
+    dnf_remove mscore-fonts-all
     dnf_install libreoffice
     dnf_install samba
     dnf_install timeshift
     dnf_install vlc
-    dnf_install wget
+    dnf_install wget2
+    dnf_install gstreamer1-plugin-libav
     dnf_install gstreamer1-plugins-base
     dnf_install gstreamer1-plugins-good
     dnf_install gstreamer1-plugins-bad-free
     dnf_install gstreamer1-plugins-ugly-free
     dnf_install gstreamer1-plugins-bad-freeworld
-    dnf_install gstreamer1-plugins-ugly
-    dnf_install gstreamer1-libav
+    dnf_install gstreamer1-plugins-ugly    
 fi
 flatpak_install org.keepassxc.KeePassXC
 
