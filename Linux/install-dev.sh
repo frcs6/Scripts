@@ -3,12 +3,22 @@
 SCRIPT_DIR=$(dirname "${BASH_SOURCE[0]}")
 source "$SCRIPT_DIR/common-functions.sh"
 
-sudo add-apt-repository ppa:dotnet/backports
-sudo apt update
+if command -v apt >/dev/null 2>&1; then
+    sudo add-apt-repository ppa:dotnet/backports
+    sudo apt update
 
-apt_install dotnet-sdk-8.0
-apt_install dotnet-sdk-9.0
-#apt_install dotnet-sdk-10.0
+    apt_install dotnet-sdk-8.0
+    apt_install dotnet-sdk-9.0
+    #apt_install dotnet-sdk-10.0
+fi
 
-snap_install code --classic
-snap_install rider --classic
+if command -v snap >/dev/null 2>&1; then
+    snap_install code --classic
+    snap_install rider --classic
+fi
+
+if command -v dnf >/dev/null 2>&1; then
+    dnf_install dotnet-sdk-8.0
+    dnf_install dotnet-sdk-9.0
+    dnf_install dotnet-sdk-10.0
+fi
