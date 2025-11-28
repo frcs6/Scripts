@@ -1,52 +1,31 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -euo pipefail
 
-# Source les fonctions communes
-source ./common-functions.sh
+SCRIPT_DIR=$(dirname "${BASH_SOURCE[0]}")
+source "$SCRIPT_DIR/common-functions.sh"
 
-echo "=== Test des fonctions is_* ==="
-echo ""
+# collect is_ functions
+mapfile -t funcs < <(declare -F | awk '{print $3}' | grep '^is_' || true)
 
-# Test is_ubuntu
-if is_ubuntu; then
-    echo "✓ is_ubuntu : VRAI (c'est Ubuntu ou dérivé)"
-else
-    echo "✗ is_ubuntu : FAUX (ce n'est pas Ubuntu)"
+if [ "${#funcs[@]}" -eq 0 ]; then
+  echo "Aucune fonction is_ trouvée."
+  exit 1
 fi
 
-# Test is_fedora
-if is_fedora; then
-    echo "✓ is_fedora : VRAI (c'est Fedora ou dérivé)"
-else
-    echo "✗ is_fedora : FAUX (ce n'est pas Fedora)"
-fi
+echo "Test des fonctions is_ dans $SCRIPT_DIR/common-functions.sh"
+echo
 
-# Test is_kubuntu
-if is_kubuntu; then
-    echo "✓ is_kubuntu : VRAI (environnement KDE détecté)"
-else
-    echo "✗ is_kubuntu : FAUX (pas d'environnement KDE)"
-fi
+for fn in "${funcs[@]}"; do
+  if ! declare -F "$fn" >/dev/null 2>&1; then
+    printf "%-24s: non définie\n" "$fn"
+    continue
+  fi
 
-# Test is_mint
-if is_mint; then
-    echo "✓ is_mint : VRAI (environnement Cinnamon détecté)"
-else
-    echo "✗ is_mint : FAUX (pas d'environnement Cinnamon)"
-fi
+  if "$fn"; then
+    printf "%-24s: détecté\n" "$fn"
+  else
+    printf "%-24s: non détecté\n" "$fn"
+  fi
+done
 
-# Test is_cosmic
-if is_cosmic; then
-    echo "✓ is_cosmic : VRAI (environnement COSMIC détecté)"
-else
-    echo "✗ is_cosmic : FAUX (pas d'environnement COSMIC)"
-fi
-
-echo ""
-echo "=== Infos système ==="
-echo "XDG_CURRENT_DESKTOP: $XDG_CURRENT_DESKTOP"
-if [ -f /etc/os-release ]; then
-    . /etc/os-release
-    echo "ID: $ID"
-    echo "ID_LIKE: $ID_LIKE"
-    echo "PRETTY_NAME: $PRETTY_NAME"
-fi
+exit 0

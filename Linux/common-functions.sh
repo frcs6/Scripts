@@ -125,48 +125,77 @@ create_symlink() {
 is_ubuntu() {
     if [ -f /etc/os-release ]; then
         . /etc/os-release
-        case "$ID" in
+        case "${ID:-}" in
             ubuntu) return 0 ;;
         esac
-        case "$ID_LIKE" in
-            *ubuntu*|*debian*) return 0 ;;
-        esac
+        if printf '%s\n' "${PRETTY_NAME:-}${NAME:-}" | grep -Eiq 'Ubuntu'; then
+            return 0
+        fi
     fi
-
     return 1
 }
 
 is_kubuntu() {
-    if [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
-        return 0
+    if [ -f /etc/os-release ]; then
+        . /etc/os-release
+        case "${ID:-}" in
+            kubuntu) return 0 ;;
+        esac
+        if printf '%s\n' "${PRETTY_NAME:-}${NAME:-}" | grep -Eiq 'Kubuntu|KDE|Plasma'; then
+            return 0
+        fi
     fi
     return 1
 }
 
 is_mint() {
-    if [ "$XDG_CURRENT_DESKTOP" = "X-Cinnamon" ]; then
-        return 0
+    if [ -f /etc/os-release ]; then
+        . /etc/os-release
+        case "${ID:-}" in
+            linuxmint|mint) return 0 ;;
+        esac
+        if printf '%s\n' "${PRETTY_NAME:-}${NAME:-}" | grep -Eiq 'Linux Mint|Mint'; then
+            return 0
+        fi
     fi
     return 1
 }
 
 is_cosmic() {
-    if [ "$XDG_CURRENT_DESKTOP" = "COSMIC" ]; then
-        return 0
+    if [ -f /etc/os-release ]; then
+        . /etc/os-release
+        case "${ID:-}" in
+            pop|pop_os|pop) return 0 ;;
+        esac
+        if printf '%s\n' "${PRETTY_NAME:-}${NAME:-}" | grep -Eiq 'Pop!_?OS|COSMIC|Pop OS'; then
+            return 0
+        fi
     fi
     return 1
 }
 
 is_fedora() {
-    # Vérifie /etc/os-release (ID / ID_LIKE) pour détecter Fedora/RHEL
     if [ -f /etc/os-release ]; then
         . /etc/os-release
-        case "$ID" in
+        case "${ID:-}" in
             fedora) return 0 ;;
         esac
-        case "$ID_LIKE" in
-            *fedora*|*rhel*) return 0 ;;
+        if printf '%s\n' "${PRETTY_NAME:-}${NAME:-}" | grep -Eiq 'Fedora'; then
+            return 0
+        fi
+    fi
+    return 1
+}
+
+is_rehl() {
+    if [ -f /etc/os-release ]; then
+        . /etc/os-release
+        case "${ID:-}" in
+            rhel|redhat|redhat-enterprise-linux|centos|rocky|almalinux|oraclelinux) return 0 ;;
         esac
+        if printf '%s\n' "${PRETTY_NAME:-}${NAME:-}" | grep -Eiq 'Red Hat|RHEL|CentOS|Rocky|AlmaLinux|Oracle'; then
+            return 0
+        fi
     fi
     return 1
 }
