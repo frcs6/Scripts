@@ -8,11 +8,20 @@ if command -v apt >/dev/null 2>&1; then
     sudo apt upgrade -y
 fi
 if command -v dnf >/dev/null 2>&1; then
-    sudo dnf upgrade -y
-    if ! rpm -q rpmfusion-free-release >/dev/null 2>&1; then
-        sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y
-        sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
-        sudo dnf update
+    sudo dnf upgrade -y    
+    if is_fedora; then
+        if ! rpm -q rpmfusion-free-release >/dev/null 2>&1; then
+            sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y
+            sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
+            sudo dnf update
+        fi
+    elif is_rehl; then
+        if ! rpm -q rpmfusion-free-release >/dev/null 2>&1; then
+            sudo dnf install --nogpgcheck https://dl.fedoraproject.org/pub/epel/epel-release-latest-$(rpm -E %rhel).noarch.rpm
+            sudo dnf install --nogpgcheck https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-$(rpm -E %rhel).noarch.rpm https://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-$(rpm -E %rhel).noarch.rpm
+            sudo subscription-manager repos --enable "codeready-builder-for-rhel-$(rpm -E %{rhel})-$(uname -m)-rpms"
+            sudo dnf update
+        fi
     fi
 fi
 if command -v snap >/dev/null 2>&1; then
@@ -53,6 +62,26 @@ elif is_mint; then
     apt_install gnome-games
     apt_install spotify-client
 elif is_fedora; then
+    dnf_install file-roller
+    dnf_install file-roller-nautilus
+    dnf_install gnome-calendar
+    dnf_install gnome-contacts
+    dnf_install gnome-maps
+    dnf_install gnome-extensions-app
+    dnf_install gnome-shell-extension-appindicator
+    dnf_install gnome-shell-extension-apps-menu
+    dnf_install gnome-shell-extension-dash-to-dock
+    dnf_install gnome-shell-extension-drive-menu
+    dnf_install gnome-shell-extension-places-menu
+    dnf_install gnome-shell-extension-status-icons
+    dnf_install gnome-shell-extension-system-monitor
+    dnf_install gnome-shell-extension-user-theme
+    dnf_install gnome-shell-extension-window-list
+    dnf_install gnome-tweaks
+    dnf_install gnome-weather
+    flatpak_install com.spotify.Client
+fi
+elif is_rehl; then
     dnf_install file-roller
     dnf_install file-roller-nautilus
     dnf_install gnome-calendar
