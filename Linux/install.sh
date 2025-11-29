@@ -108,10 +108,6 @@ if command -v apt >/dev/null 2>&1; then
     sudo apt autopurge -y
     sudo apt autoremove -y
 fi
-if command -v dnf >/dev/null 2>&1; then
-    sudo dnf autoremove -y
-    sudo dnf clean all
-fi
 if command -v flatpak >/dev/null 2>&1; then
     flatpak uninstall --unused -y
 fi

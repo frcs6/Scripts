@@ -22,28 +22,6 @@ apt_remove() {
     fi
 }
 
-dnf_install() {
-    local package="$1"
-
-    if ! rpm -q "$package" >/dev/null 2>&1; then
-        echo "Installation de $package..."
-        sudo dnf install "$package" -y
-    else
-        echo "dnf: $package est déjà installé."
-    fi
-}
-
-dnf_remove() {
-    local package="$1"
-
-    if ! rpm -q "$package" >/dev/null 2>&1; then
-        echo "dnf: $package est déjà supprimé."
-    else
-        echo "Suppression de $package..."
-        sudo dnf remove "$package" -y
-    fi
-}
-
 snap_install() {
     local package="$1"
     local options="$2"
@@ -168,32 +146,6 @@ is_cosmic() {
             pop|pop_os|pop) return 0 ;;
         esac
         if printf '%s\n' "${PRETTY_NAME:-}${NAME:-}" | grep -Eiq 'Pop!_?OS|COSMIC|Pop OS'; then
-            return 0
-        fi
-    fi
-    return 1
-}
-
-is_fedora() {
-    if [ -f /etc/os-release ]; then
-        . /etc/os-release
-        case "${ID:-}" in
-            fedora) return 0 ;;
-        esac
-        if printf '%s\n' "${PRETTY_NAME:-}${NAME:-}" | grep -Eiq 'Fedora'; then
-            return 0
-        fi
-    fi
-    return 1
-}
-
-is_rehl() {
-    if [ -f /etc/os-release ]; then
-        . /etc/os-release
-        case "${ID:-}" in
-            rhel|redhat|redhat-enterprise-linux|centos|rocky|almalinux|oraclelinux) return 0 ;;
-        esac
-        if printf '%s\n' "${PRETTY_NAME:-}${NAME:-}" | grep -Eiq 'Red Hat|RHEL|CentOS|Rocky|AlmaLinux|Oracle'; then
             return 0
         fi
     fi
