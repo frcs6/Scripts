@@ -8,10 +8,14 @@ if ! is_debian; then
     exit 1
 fi
 
-if command -v apt >/dev/null 2>&1; then
-    sudo apt update
-    sudo apt upgrade -y
+# TODEL
+if command -v snap >/dev/null 2>&1; then
+    snap_remove vlc
 fi
+# TODEL
+
+sudo apt update
+sudo apt full-upgrade -y
 if command -v snap >/dev/null 2>&1; then
     sudo snap refresh
 fi
@@ -44,6 +48,7 @@ apt_install gstreamer1.0-libav
 apt_install libdvd-pkg
 apt_install p7zip-full
 apt_install unrar
+apt_install vlc
 
 apt_install hunspell-en-ca
 apt_install hunspell-en-us
@@ -63,7 +68,6 @@ apt_install wcanadian
 apt_install wfrench
 
 snap_install spotify
-snap_install vlc
 
 flatpak_install org.keepassxc.KeePassXC
 

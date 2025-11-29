@@ -3,10 +3,8 @@
 SCRIPT_DIR=$(dirname "${BASH_SOURCE[0]}")
 source "$SCRIPT_DIR/common-functions.sh"
 
-if command -v apt >/dev/null 2>&1; then
-    sudo apt update
-    sudo apt upgrade -y
-fi
+sudo apt update
+sudo apt full-upgrade -y
 if command -v snap >/dev/null 2>&1; then
     sudo snap refresh
 fi
@@ -16,7 +14,7 @@ fi
 
 # TODEL
 if command -v snap >/dev/null 2>&1; then
-    apt_remove vlc
+    snap_remove vlc
 fi
 # TODEL
 
@@ -45,17 +43,17 @@ elif is_mint; then
     apt_install spotify-client
 fi
 
-if command -v apt >/dev/null 2>&1; then
-    apt_install libfuse2t64
-    apt_install samba
-    apt_install timeshift
-    apt_install ttf-mscorefonts-installer
-    apt_install ubuntu-restricted-addons
-    apt_install ubuntu-restricted-extras
-    apt_install wget
-    apt_install gstreamer1.0-plugins-bad
-    apt_install gstreamer1.0-libav
-fi
+apt_install libfuse2t64
+apt_install samba
+apt_install timeshift
+apt_install ttf-mscorefonts-installer
+apt_install ubuntu-restricted-addons
+apt_install ubuntu-restricted-extras
+apt_install wget
+apt_install gstreamer1.0-plugins-bad
+apt_install gstreamer1.0-libav
+apt_install vlc
+install_google_chrome
 flatpak_install org.keepassxc.KeePassXC
 
 # Language Support (TODO: fix this for each distro)
@@ -80,17 +78,10 @@ if command -v apt >/dev/null 2>&1; then
     apt_install wfrench
 fi
 
-install_google_chrome
-if command -v snap >/dev/null 2>&1; then
-    snap_install vlc
-fi
-
 # Nettoyage final
-if command -v apt >/dev/null 2>&1; then
-    sudo apt autoremove --purge -y
-    sudo apt autopurge -y
-    sudo apt autoremove -y
-fi
+sudo apt autoremove --purge -y
+sudo apt autopurge -y
+sudo apt autoremove -y
 if command -v flatpak >/dev/null 2>&1; then
     flatpak uninstall --unused -y
 fi
