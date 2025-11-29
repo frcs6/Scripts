@@ -14,7 +14,7 @@ if command -v snap >/dev/null 2>&1; then
     sudo snap refresh
 fi
 if command -v flatpak >/dev/null 2>&1; then
-    sudo flatpak update -y
+    flatpak update -y
 fi
 
 apt_install firmware-linux 
@@ -32,7 +32,7 @@ apt_install gnome-maps
 apt_install gnome-tweaks
 apt_install gnome-weather
 
-apt_install libfuse2t
+apt_install libfuse2t64
 apt_install samba
 apt_install timeshift
 apt_install ttf-mscorefonts-installer

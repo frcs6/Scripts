@@ -15,7 +15,7 @@ if command -v snap >/dev/null 2>&1; then
     sudo snap refresh
 fi
 if command -v flatpak >/dev/null 2>&1; then
-    sudo flatpak update -y
+    flatpak update -y
 fi
 
 if is_ubuntu; then
