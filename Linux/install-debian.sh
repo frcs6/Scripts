@@ -26,9 +26,20 @@ apt_install gnome-calendar
 apt_install gnome-contacts
 apt_install gnome-games
 apt_install gnome-maps
-#apt_install gnome-shell-extension-alphabetical-grid
-#apt_install gnome-shell-extension-prefs
-#apt_install gnome-shell-extensions
+apt_install gnome-shell-extension-appindicator
+apt_install gnome-shell-extension-apps-menu
+apt_install gnome-shell-extension-blur-my-shell
+apt_install gnome-shell-extension-caffeine
+apt_install gnome-shell-extension-dashtodock
+apt_install gnome-shell-extension-desktop-icons-ng
+apt_install gnome-shell-extension-drive-menu
+apt_install gnome-shell-extension-gamemode
+apt_install gnome-shell-extension-places-menu
+apt_install gnome-shell-extension-prefs
+apt_install gnome-shell-extension-tiling-assistant
+apt_install gnome-shell-extension-user-theme
+apt_install gnome-shell-extension-weather
+apt_install gnome-shell-extensions
 apt_install gnome-tweaks
 apt_install gnome-weather
 
@@ -47,7 +58,6 @@ apt_install vlc
 apt_install hunspell-en-ca
 apt_install hunspell-en-us
 apt_install hunspell-fr
-apt_install hyphen-en-ca
 apt_install hyphen-en-us
 apt_install hyphen-fr
 apt_install libreoffice-help-en-us
