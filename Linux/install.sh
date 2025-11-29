@@ -7,23 +7,6 @@ if command -v apt >/dev/null 2>&1; then
     sudo apt update
     sudo apt upgrade -y
 fi
-if command -v dnf >/dev/null 2>&1; then
-    sudo dnf upgrade -y    
-    if is_fedora; then
-        if ! rpm -q rpmfusion-free-release >/dev/null 2>&1; then
-            sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y
-            sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
-            sudo dnf update
-        fi
-    elif is_rehl; then
-        if ! rpm -q rpmfusion-free-release >/dev/null 2>&1; then
-            sudo dnf install --nogpgcheck https://dl.fedoraproject.org/pub/epel/epel-release-latest-$(rpm -E %rhel).noarch.rpm -y
-            sudo dnf install --nogpgcheck https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-$(rpm -E %rhel).noarch.rpm https://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-$(rpm -E %rhel).noarch.rpm -y
-            sudo subscription-manager repos --enable "codeready-builder-for-rhel-$(rpm -E %{rhel})-$(uname -m)-rpms"
-            sudo dnf update
-        fi
-    fi
-fi
 if command -v snap >/dev/null 2>&1; then
     sudo snap refresh
 fi
@@ -54,51 +37,12 @@ elif is_kubuntu; then
     apt_install kdegames
     apt_install marble
     snap_install spotify
-    snap_remove snap-store
 elif is_cosmic; then
     apt_install gnome-games
     flatpak_install com.spotify.Client
 elif is_mint; then
     apt_install gnome-games
     apt_install spotify-client
-elif is_fedora; then
-    dnf_install file-roller
-    dnf_install file-roller-nautilus
-    dnf_install gnome-calendar
-    dnf_install gnome-contacts
-    dnf_install gnome-maps
-    dnf_install gnome-extensions-app
-    dnf_install gnome-shell-extension-appindicator
-    dnf_install gnome-shell-extension-apps-menu
-    dnf_install gnome-shell-extension-dash-to-dock
-    dnf_install gnome-shell-extension-drive-menu
-    dnf_install gnome-shell-extension-places-menu
-    dnf_install gnome-shell-extension-status-icons
-    dnf_install gnome-shell-extension-system-monitor
-    dnf_install gnome-shell-extension-user-theme
-    dnf_install gnome-shell-extension-window-list
-    dnf_install gnome-tweaks
-    dnf_install gnome-weather
-    flatpak_install com.spotify.Client
-elif is_rehl; then
-    dnf_install file-roller
-    dnf_install file-roller-nautilus
-    dnf_install gnome-calendar
-    dnf_install gnome-contacts
-    dnf_install gnome-maps
-    dnf_install gnome-extensions-app
-    dnf_install gnome-shell-extension-appindicator
-    dnf_install gnome-shell-extension-apps-menu
-    dnf_install gnome-shell-extension-dash-to-dock
-    dnf_install gnome-shell-extension-drive-menu
-    dnf_install gnome-shell-extension-places-menu
-    dnf_install gnome-shell-extension-status-icons
-    dnf_install gnome-shell-extension-system-monitor
-    dnf_install gnome-shell-extension-user-theme
-    dnf_install gnome-shell-extension-window-list
-    dnf_install gnome-tweaks
-    dnf_install gnome-weather
-    flatpak_install com.spotify.Client
 fi
 
 if command -v apt >/dev/null 2>&1; then
@@ -112,27 +56,9 @@ if command -v apt >/dev/null 2>&1; then
     apt_install gstreamer1.0-plugins-bad
     apt_install gstreamer1.0-libav
 fi
-if command -v dnf >/dev/null 2>&1; then
-    dnf_install fuse3-libs
-    dnf_install gamemode
-    dnf_install google-chrome-stable
-    dnf_install libreoffice
-    dnf_install 
-    dnf_install samba
-    dnf_install timeshift
-    dnf_install vlc
-    dnf_install wget2
-    dnf_install gstreamer1-plugin-libav
-    dnf_install gstreamer1-plugins-base
-    dnf_install gstreamer1-plugins-good
-    dnf_install gstreamer1-plugins-bad-free
-    dnf_install gstreamer1-plugins-ugly-free
-    dnf_install gstreamer1-plugins-bad-freeworld
-    dnf_install gstreamer1-plugins-ugly    
-fi
 flatpak_install org.keepassxc.KeePassXC
 
-# Language Support
+# Language Support (TODO: fix this for each distro)
 if command -v apt >/dev/null 2>&1; then
     apt_install hunspell-en-ca
     apt_install hunspell-en-us
@@ -152,24 +78,6 @@ if command -v apt >/dev/null 2>&1; then
     apt_install wamerican
     apt_install wcanadian
     apt_install wfrench
-fi
-if command -v dnf >/dev/null 2>&1; then
-    dnf_install hunspell-en
-    dnf_install hunspell-en-US
-    dnf_install hunspell-fr
-    dnf_install hyphen-en
-    dnf_install hyphen-fr
-    dnf_install glibc-langpack-en
-    dnf_install glibc-langpack-fr
-    dnf_install libreoffice-langpack-en
-    dnf_install libreoffice-langpack-fr
-    dnf_install libreoffice-help-en
-    dnf_install libreoffice-help-fr
-    dnf_install mythes-en
-    dnf_install mythes-fr
-    dnf_install aspell-en
-    dnf_install aspell-fr
-    dnf_install words
 fi
 
 mkdir -p ~/tmp
