@@ -80,7 +80,6 @@ elif is_fedora; then
     dnf_install gnome-tweaks
     dnf_install gnome-weather
     flatpak_install com.spotify.Client
-fi
 elif is_rehl; then
     dnf_install file-roller
     dnf_install file-roller-nautilus
