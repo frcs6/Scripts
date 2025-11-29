@@ -8,12 +8,6 @@ if ! is_debian; then
     exit 1
 fi
 
-# TODEL
-if command -v snap >/dev/null 2>&1; then
-    snap_remove vlc
-fi
-# TODEL
-
 sudo apt update
 sudo apt full-upgrade -y
 if command -v snap >/dev/null 2>&1; then
