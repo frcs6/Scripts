@@ -16,7 +16,7 @@ fi
 
 # TODEL
 if command -v snap >/dev/null 2>&1; then
-    snap_remove vlc
+    apt_remove vlc
 fi
 # TODEL
 
@@ -51,7 +51,7 @@ if command -v apt >/dev/null 2>&1; then
     apt_install timeshift
     apt_install ttf-mscorefonts-installer
     apt_install ubuntu-restricted-addons
-    apt_install vlc
+    apt_install ubuntu-restricted-extras
     apt_install wget
     apt_install gstreamer1.0-plugins-bad
     apt_install gstreamer1.0-libav
@@ -80,27 +80,10 @@ if command -v apt >/dev/null 2>&1; then
     apt_install wfrench
 fi
 
-mkdir -p ~/tmp
-pushd ~/tmp > /dev/null
-
-# Google Chrome
-if command -v apt >/dev/null 2>&1; then
-    if ! dpkg -s "google-chrome-stable" >/dev/null 2>&1; then
-        echo "Installation de google-chrome-stable..."
-        wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-        if [[ -f google-chrome-stable_current_amd64.deb ]]; then
-            apt_install ./google-chrome-stable_current_amd64.deb
-            rm ./google-chrome-stable_current_amd64.deb
-        else
-            echo "Erreur : le fichier .deb n'a pas été téléchargé."
-        fi
-    else
-        echo "google-chrome-stable est déjà installé."
-    fi
+install_google_chrome
+if command -v snap >/dev/null 2>&1; then
+    snap_install vlc
 fi
-
-popd
-rm -rf ~/tmp
 
 # Nettoyage final
 if command -v apt >/dev/null 2>&1; then

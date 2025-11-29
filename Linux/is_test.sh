@@ -4,7 +4,6 @@ set -euo pipefail
 SCRIPT_DIR=$(dirname "${BASH_SOURCE[0]}")
 source "$SCRIPT_DIR/common-functions.sh"
 
-# collect is_ functions
 mapfile -t funcs < <(declare -F | awk '{print $3}' | grep '^is_' || true)
 
 if [ "${#funcs[@]}" -eq 0 ]; then

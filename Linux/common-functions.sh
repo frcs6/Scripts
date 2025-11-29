@@ -100,15 +100,35 @@ create_symlink() {
   fi
 }
 
+install_google_chrome() {
+    mkdir -p ~/tmp
+    pushd ~/tmp > /dev/null
+
+    if command -v apt >/dev/null 2>&1; then
+        if ! dpkg -s "google-chrome-stable" >/dev/null 2>&1; then
+            echo "Installation de google-chrome-stable..."
+            wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+            if [[ -f google-chrome-stable_current_amd64.deb ]]; then
+                apt_install ./google-chrome-stable_current_amd64.deb
+                rm ./google-chrome-stable_current_amd64.deb
+            else
+                echo "Erreur : le fichier .deb n'a pas été téléchargé."
+            fi
+        else
+            echo "google-chrome-stable est déjà installé."
+        fi
+    fi
+
+    popd
+    rm -rf ~/tmp
+}
+
 is_ubuntu() {
     if [ -f /etc/os-release ]; then
         . /etc/os-release
         case "${ID:-}" in
             ubuntu) return 0 ;;
         esac
-        if printf '%s\n' "${PRETTY_NAME:-}${NAME:-}" | grep -Eiq 'Ubuntu'; then
-            return 0
-        fi
     fi
     return 1
 }
@@ -119,9 +139,6 @@ is_kubuntu() {
         case "${ID:-}" in
             kubuntu) return 0 ;;
         esac
-        if printf '%s\n' "${PRETTY_NAME:-}${NAME:-}" | grep -Eiq 'Kubuntu|KDE|Plasma'; then
-            return 0
-        fi
     fi
     return 1
 }
@@ -132,9 +149,6 @@ is_mint() {
         case "${ID:-}" in
             linuxmint|mint) return 0 ;;
         esac
-        if printf '%s\n' "${PRETTY_NAME:-}${NAME:-}" | grep -Eiq 'Linux Mint|Mint'; then
-            return 0
-        fi
     fi
     return 1
 }
@@ -145,9 +159,16 @@ is_cosmic() {
         case "${ID:-}" in
             pop|pop_os|pop) return 0 ;;
         esac
-        if printf '%s\n' "${PRETTY_NAME:-}${NAME:-}" | grep -Eiq 'Pop!_?OS|COSMIC|Pop OS'; then
-            return 0
-        fi
+    fi
+    return 1
+}
+
+is_debian() {
+    if [ -f /etc/os-release ]; then
+        . /etc/os-release
+        case "${ID:-}" in
+            debian) return 0 ;;
+        esac        
     fi
     return 1
 }
