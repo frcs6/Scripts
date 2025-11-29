@@ -22,6 +22,8 @@ apt_install firmware-linux-nonfree
 apt_install firmware-amd-graphics
 
 apt_install file-roller
+apt_install caffeine
+apt_install gamemode
 apt_install gnome-calendar
 apt_install gnome-contacts
 apt_install gnome-games
