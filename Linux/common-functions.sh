@@ -123,6 +123,29 @@ install_google_chrome() {
     rm -rf ~/tmp
 }
 
+install_steam() {
+    mkdir -p ~/tmp
+    pushd ~/tmp > /dev/null
+
+    if command -v apt >/dev/null 2>&1; then
+        if ! dpkg -s "steam-launcher" >/dev/null 2>&1; then
+            echo "Installation de steam..."
+            wget -q https://cdn.fastly.steamstatic.com/client/installer/steam.deb
+            if [[ -f steam.deb ]]; then
+                apt_install ./steam.deb
+                rm ./steam.deb
+            else
+                echo "Erreur : le fichier .deb n'a pas été téléchargé."
+            fi
+        else
+            echo "steam est déjà installé."
+        fi
+    fi
+
+    popd
+    rm -rf ~/tmp
+}
+
 is_ubuntu() {
     if [ -f /etc/os-release ]; then
         . /etc/os-release
