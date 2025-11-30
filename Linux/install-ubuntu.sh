@@ -29,20 +29,13 @@ if is_ubuntu; then
     apt_install gnome-shell-extensions
     apt_install gnome-tweaks
     apt_install gnome-weather
-    snap_install spotify
     snap_remove snap-store
 elif is_kubuntu; then
     apt_install kdegames
     apt_install marble
-    snap_install spotify
-elif is_cosmic; then
-    apt_install gnome-games
-    flatpak_install com.spotify.Client
-elif is_mint; then
-    apt_install gnome-games
-    apt_install spotify-client
 fi
 
+apt_install curl
 apt_install libfuse2t64
 apt_install samba
 apt_install timeshift
@@ -50,11 +43,15 @@ apt_install ttf-mscorefonts-installer
 apt_install ubuntu-restricted-addons
 apt_install ubuntu-restricted-extras
 apt_install wget
+apt_install gstreamer1.0-plugins-base
+apt_install gstreamer1.0-plugins-good
 apt_install gstreamer1.0-plugins-bad
+apt_install gstreamer1.0-plugins-ugly
 apt_install gstreamer1.0-libav
 apt_install vlc
 install_google_chrome
 flatpak_install org.keepassxc.KeePassXC
+snap_install spotify
 
 # Language Support (TODO: fix this for each distro)
 if command -v apt >/dev/null 2>&1; then
