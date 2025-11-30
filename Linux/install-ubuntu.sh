@@ -53,28 +53,6 @@ install_google_chrome
 flatpak_install org.keepassxc.KeePassXC
 snap_install spotify
 
-# Language Support (TODO: fix this for each distro)
-if command -v apt >/dev/null 2>&1; then
-    apt_install hunspell-en-ca
-    apt_install hunspell-en-us
-    apt_install hunspell-fr
-    apt_install hyphen-en-ca
-    apt_install hyphen-en-us
-    apt_install hyphen-fr
-    apt_install language-pack-en
-    apt_install language-pack-fr
-    apt_install libreoffice-help-en-us
-    apt_install libreoffice-help-fr
-    apt_install libreoffice-l10n-fr
-    apt_install mythes-en-us
-    apt_install mythes-fr
-    apt_install aspell-en
-    apt_install aspell-fr
-    apt_install wamerican
-    apt_install wcanadian
-    apt_install wfrench
-fi
-
 # Nettoyage final
 sudo apt autoremove --purge -y
 sudo apt autopurge -y
