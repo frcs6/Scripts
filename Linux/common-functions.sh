@@ -147,51 +147,19 @@ install_steam() {
 }
 
 is_ubuntu() {
-    if [ -f /etc/os-release ]; then
-        . /etc/os-release
-        case "${ID:-}" in
-            ubuntu) return 0 ;;
-        esac
-    fi
+    local x=${XDG_CURRENT_DESKTOP:-}
+    x=${x,,}  # lowercase (bash)
+    case "$x" in
+        *gnome*|*ubuntu*|*unity*) return 0 ;;
+    esac
     return 1
 }
 
 is_kubuntu() {
-    if [ -f /etc/os-release ]; then
-        . /etc/os-release
-        case "${ID:-}" in
-            kubuntu) return 0 ;;
-        esac
-    fi
-    return 1
-}
-
-is_mint() {
-    if [ -f /etc/os-release ]; then
-        . /etc/os-release
-        case "${ID:-}" in
-            linuxmint|mint) return 0 ;;
-        esac
-    fi
-    return 1
-}
-
-is_cosmic() {
-    if [ -f /etc/os-release ]; then
-        . /etc/os-release
-        case "${ID:-}" in
-            pop|pop_os|pop) return 0 ;;
-        esac
-    fi
-    return 1
-}
-
-is_debian() {
-    if [ -f /etc/os-release ]; then
-        . /etc/os-release
-        case "${ID:-}" in
-            debian) return 0 ;;
-        esac        
-    fi
+    local x=${XDG_CURRENT_DESKTOP:-}
+    x=${x,,}  # lowercase (bash)
+    case "$x" in
+        *kde*|*plasma*|*kubuntu*) return 0 ;;
+    esac
     return 1
 }
