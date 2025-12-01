@@ -3,12 +3,6 @@
 SCRIPT_DIR=$(dirname "${BASH_SOURCE[0]}")
 source "$SCRIPT_DIR/common-functions.sh"
 
-# TODEL
-if command -v snap >/dev/null 2>&1; then
-    snap_remove vlc
-fi
-# TODEL
-
 sudo apt update
 sudo apt full-upgrade -y
 if command -v snap >/dev/null 2>&1; then
