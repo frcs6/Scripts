@@ -148,7 +148,7 @@ install_steam() {
 
 is_ubuntu() {
     local x=${XDG_CURRENT_DESKTOP:-}
-    x=${x,,}  # lowercase (bash)
+    x=${x,,}
     case "$x" in
         *gnome*|*ubuntu*|*unity*) return 0 ;;
     esac
@@ -157,7 +157,7 @@ is_ubuntu() {
 
 is_kubuntu() {
     local x=${XDG_CURRENT_DESKTOP:-}
-    x=${x,,}  # lowercase (bash)
+    x=${x,,}
     case "$x" in
         *kde*|*plasma*|*kubuntu*) return 0 ;;
     esac
