@@ -35,8 +35,6 @@ elif is_kubuntu; then
     apt_install marble
 fi
 
-apt_install caffeine
-apt_install gamemode
 apt_install curl
 apt_install libfuse2t64
 apt_install samba
