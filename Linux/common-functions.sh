@@ -22,18 +22,6 @@ apt_remove() {
     fi
 }
 
-snap_install() {
-    local package="$1"
-    local options="$2"
-
-    if ! snap list | grep -q "^$package\b"; then
-        echo "Installation du snap $package..."
-        sudo snap install "$package" $options
-    else
-        echo "snap: $package est déjà installé."
-    fi
-}
-
 dnf_install() {
     local package="$1"
 
@@ -53,6 +41,18 @@ dnf_remove() {
     else
         echo "Suppression de $package..."
         sudo dnf remove "$package" -y
+    fi
+}
+
+snap_install() {
+    local package="$1"
+    local options="$2"
+
+    if ! snap list | grep -q "^$package\b"; then
+        echo "Installation du snap $package..."
+        sudo snap install "$package" $options
+    else
+        echo "snap: $package est déjà installé."
     fi
 }
 

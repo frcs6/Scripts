@@ -19,6 +19,11 @@ if command -v dnf >/dev/null 2>&1; then
 fi
 if command -v snap >/dev/null 2>&1; then
     sudo snap refresh
+else
+    sudo dnf install snapd -y
+    sudo ln -s /var/lib/snapd/snap /snap
+    touch ~/.hidden
+    grep -qx "snap" ~/.hidden || echo "snap" >> ~/.hidden
 fi
 flatpak update -y
 
@@ -64,6 +69,10 @@ dnf_install glibc-langpack-fr
 
 flatpak_install com.spotify.Client
 flatpak_install org.keepassxc.KeePassXC
+
+dnf_install dotnet-sdk-10.0
+snap_install code --classic
+snap_install rider --classic
 
 # Nettoyage final
 sudo dnf autoremove -y
