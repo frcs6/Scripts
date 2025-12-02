@@ -53,7 +53,6 @@ dnf_install samba
 dnf_install timeshift
 dnf_install vlc
 dnf_install wget2
-dnf_install caffeine
 dnf_install gamemode
 dnf_install gstreamer1-plugin-libav
 dnf_install gstreamer1-plugins-base
