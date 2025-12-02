@@ -7,7 +7,7 @@ if command -v dnf >/dev/null 2>&1; then
     sudo dnf upgrade -y    
     if ! rpm -q rpmfusion-free-release >/dev/null 2>&1; then
         sudo dnf copr disable phracek/PyCharm
-        sudo dnf config-manager setopt rpmfusion-free-steam.enabled=0
+        sudo dnf config-manager setopt rpmfusion-nonfree-steam.enabled=0
         sudo dnf config-manager setopt rpmfusion-nonfree-nvidia-driver.enabled=0
 
         sudo dnf install \
