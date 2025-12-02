@@ -35,8 +35,11 @@ dnf_install gnome-maps
 dnf_install gnome-extensions-app
 dnf_install gnome-shell-extension-appindicator
 dnf_install gnome-shell-extension-apps-menu
+dnf_install gnome-shell-extension-blur-my-shell
+dnf_install gnome-shell-extension-caffeine
 dnf_install gnome-shell-extension-dash-to-dock
 dnf_install gnome-shell-extension-drive-menu
+dnf_install gnome-shell-extension-gamemode
 dnf_install gnome-shell-extension-places-menu
 dnf_install gnome-shell-extension-system-monitor
 dnf_install gnome-shell-extension-user-theme
@@ -51,6 +54,8 @@ dnf_install samba
 dnf_install timeshift
 dnf_install vlc
 dnf_install wget2
+dnf_install caffeine
+dnf_install gamemode
 dnf_install gstreamer1-plugin-libav
 dnf_install gstreamer1-plugins-base
 dnf_install gstreamer1-plugins-good
