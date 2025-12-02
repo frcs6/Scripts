@@ -69,6 +69,18 @@ dnf_install libreoffice-langpack-fr
 dnf_install libreoffice-help-fr 
 dnf_install glibc-langpack-fr
 
+# sudo dnf install amd-ucode
+# sudo dnf install mesa-vulkan-drivers mesa-vulkan-drivers.i686 vulkan-tools
+# sudo dnf install rocm-opencl
+# sudo dnf install pulseaudio-utils pipewire-alsa pipewire-pulseaudio
+# sudo dnf install gstreamer1-plugins-{good,bad-free,bad-free-extras,ugly} ffmpeg
+# sudo dnf install rtlwifi-firmware
+# sudo dnf install bolt
+# sudo systemctl enable --now bolt.service
+# sudo dnf install smartmontools nvme-cli
+# sudo dnf install tlp tlp-rdw
+# sudo systemctl enable --now tlp
+
 flatpak_install com.spotify.Client
 flatpak_install org.keepassxc.KeePassXC
 
