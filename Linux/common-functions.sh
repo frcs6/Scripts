@@ -34,6 +34,28 @@ snap_install() {
     fi
 }
 
+dnf_install() {
+    local package="$1"
+
+    if ! rpm -q "$package" >/dev/null 2>&1; then
+        echo "Installation de $package..."
+        sudo dnf install "$package" -y
+    else
+        echo "dnf: $package est déjà installé."
+    fi
+}
+
+dnf_remove() {
+    local package="$1"
+
+    if ! rpm -q "$package" >/dev/null 2>&1; then
+        echo "dnf: $package est déjà supprimé."
+    else
+        echo "Suppression de $package..."
+        sudo dnf remove "$package" -y
+    fi
+}
+
 snap_remove() {
     local package="$1"
 
