@@ -36,7 +36,6 @@ dnf_install gnome-extensions-app
 dnf_install gnome-shell-extension-appindicator
 dnf_install gnome-shell-extension-apps-menu
 dnf_install gnome-shell-extension-blur-my-shell
-dnf_install gnome-shell-extension-caffeine
 dnf_install gnome-shell-extension-dash-to-dock
 dnf_install gnome-shell-extension-drive-menu
 dnf_install gnome-shell-extension-gamemode
