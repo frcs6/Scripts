@@ -81,12 +81,12 @@ dnf_install glibc-langpack-fr
 # sudo dnf install tlp tlp-rdw
 # sudo systemctl enable --now tlp
 
-flatpak_install com.spotify.Client
+snap_install spotify
 flatpak_install org.keepassxc.KeePassXC
 
 dnf_install dotnet-sdk-10.0
-snap_install code --classic
-snap_install rider --classic
+#snap_install code --classic
+#snap_install rider --classic
 
 # Nettoyage final
 sudo dnf autoremove -y
