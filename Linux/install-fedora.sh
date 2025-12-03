@@ -84,7 +84,7 @@ dnf_install glibc-langpack-fr
 snap_install spotify
 flatpak_install org.keepassxc.KeePassXC
 
-dnf_install dotnet-sdk-10.0
+#dnf_install dotnet-sdk-10.0
 #snap_install code --classic
 #snap_install rider --classic
 
