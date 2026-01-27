@@ -3,20 +3,24 @@
 SCRIPT_DIR=$(dirname "${BASH_SOURCE[0]}")
 source "$SCRIPT_DIR/common-functions.sh"
 
-if command -v dnf >/dev/null 2>&1; then
-    sudo dnf upgrade -y    
-    if ! rpm -q rpmfusion-free-release >/dev/null 2>&1; then
-        sudo dnf copr disable phracek/PyCharm
-        sudo dnf config-manager setopt rpmfusion-nonfree-steam.enabled=0
-        sudo dnf config-manager setopt rpmfusion-nonfree-nvidia-driver.enabled=0
-
-        sudo dnf install \
-            https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
-            https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
-
-        sudo dnf update -y
-    fi
+if ! command -v apt >/dev/null 2>&1; then
+    echo "dnf n'est pas disponible — script ignoré."
+    exit 0
 fi
+
+sudo dnf upgrade -y    
+if ! rpm -q rpmfusion-free-release >/dev/null 2>&1; then
+    sudo dnf copr disable phracek/PyCharm
+    sudo dnf config-manager setopt rpmfusion-nonfree-steam.enabled=0
+    sudo dnf config-manager setopt rpmfusion-nonfree-nvidia-driver.enabled=0
+
+    sudo dnf install \
+        https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
+        https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
+
+    sudo dnf update -y
+fi
+
 if command -v snap >/dev/null 2>&1; then
     sudo snap refresh
 else

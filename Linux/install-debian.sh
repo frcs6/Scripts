@@ -3,6 +3,11 @@
 SCRIPT_DIR=$(dirname "${BASH_SOURCE[0]}")
 source "$SCRIPT_DIR/common-functions.sh"
 
+if ! command -v apt >/dev/null 2>&1; then
+    echo "apt n'est pas disponible — script ignoré."
+    exit 0
+fi
+
 sudo apt update
 sudo apt full-upgrade -y
 if command -v snap >/dev/null 2>&1; then
@@ -66,7 +71,7 @@ apt_install wcanadian
 apt_install wfrench
 
 apt_install papirus-icon-theme
-apt_install icon-theme-papirus
+snap_install icon-theme-papirus
 
 snap_install spotify
 
