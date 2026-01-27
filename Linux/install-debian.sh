@@ -43,13 +43,10 @@ apt_install gnome-weather
 apt_install libfuse2t64
 apt_install samba
 apt_install timeshift
-apt_install ttf-mscorefonts-installer
 apt_install wget
 apt_install gstreamer1.0-plugins-bad
 apt_install gstreamer1.0-libav
-apt_install libdvd-pkg
 apt_install p7zip-full
-apt_install unrar
 apt_install vlc
 
 apt_install hunspell-en-ca
