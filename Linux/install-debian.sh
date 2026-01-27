@@ -79,19 +79,6 @@ flatpak_install org.keepassxc.KeePassXC
 
 install_google_chrome
 
-# apt remove firefox-esr*
-# wget https://packages.mozilla.org/apt/repo-signing-key.gpg -O   /etc/apt/keyrings/packages.mozilla.org.asc 
-# echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main" > /etc/apt/sources.list.d/mozilla.list 
-# apt update
-# apt install firefox
-# apt install firefox-l10n-fr
-
-# wget https://packages.microsoft.com/config/debian/13/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
-# sudo dpkg -i packages-microsoft-prod.deb
-# rm packages-microsoft-prod.deb
-# sudo apt-get update && sudo apt-get install -y dotnet-sdk-8.0
-# sudo apt-get update && sudo apt-get install -y dotnet-sdk-10.0
-
 if command -v apt >/dev/null 2>&1; then
     sudo apt autoremove --purge -y
     sudo apt autoremove -y
