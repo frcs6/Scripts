@@ -3,7 +3,7 @@
 SCRIPT_DIR=$(dirname "${BASH_SOURCE[0]}")
 source "$SCRIPT_DIR/common-functions.sh"
 
-if ! command -v apt >/dev/null 2>&1; then
+if ! command -v dnf >/dev/null 2>&1; then
     echo "dnf n'est pas disponible — script ignoré."
     exit 0
 fi
