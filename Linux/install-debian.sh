@@ -65,6 +65,9 @@ apt_install wamerican
 apt_install wcanadian
 apt_install wfrench
 
+apt_install papirus-icon-theme
+apt_install icon-theme-papirus
+
 snap_install spotify
 
 flatpak_install org.keepassxc.KeePassXC
