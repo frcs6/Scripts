@@ -3,11 +3,6 @@
 SCRIPT_DIR=$(dirname "${BASH_SOURCE[0]}")
 source "$SCRIPT_DIR/common-functions.sh"
 
-if ! is_debian; then
-    echo "Ce script ne s'exécute que sur Debian ou ses dérivés. Arrêt." >&2
-    exit 1
-fi
-
 sudo apt update
 sudo apt full-upgrade -y
 if command -v snap >/dev/null 2>&1; then
