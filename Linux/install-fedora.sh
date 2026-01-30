@@ -88,6 +88,11 @@ dnf_install glibc-langpack-fr
 snap_install spotify
 flatpak_install org.keepassxc.KeePassXC
 
+dnf_install papirus-icon-theme-dark
+dnf_install papirus-icon-theme-light
+dnf_install libreoffice-icon-theme-papirus
+snap_install icon-theme-papirus
+
 #dnf_install dotnet-sdk-10.0
 #snap_install code --classic
 #snap_install rider --classic
