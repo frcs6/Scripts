@@ -51,6 +51,8 @@ apt_install vlc
 install_google_chrome
 flatpak_install org.keepassxc.KeePassXC
 snap_install spotify
+apt_install papirus-icon-theme
+snap_install icon-theme-papirus
 
 # Nettoyage final
 sudo apt autoremove --purge -y
