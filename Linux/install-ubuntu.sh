@@ -15,7 +15,6 @@ if command -v snap >/dev/null 2>&1; then
 fi
 if command -v flatpak >/dev/null 2>&1; then
     flatpak update -y
-    flatpak repair
 fi
 
 if is_ubuntu; then
