@@ -21,15 +21,8 @@ if ! rpm -q rpmfusion-free-release >/dev/null 2>&1; then
     sudo dnf update -y
 fi
 
-if command -v snap >/dev/null 2>&1; then
-    sudo snap refresh
-else
-    sudo dnf install snapd -y
-    sudo ln -s /var/lib/snapd/snap /snap
-    touch ~/.hidden
-    grep -qx "snap" ~/.hidden || echo "snap" >> ~/.hidden
-fi
 flatpak update -y
+flatpak repair -y
 
 dnf_install file-roller
 dnf_install file-roller-nautilus
@@ -38,14 +31,10 @@ dnf_install gnome-contacts
 dnf_install gnome-maps
 dnf_install gnome-extensions-app
 dnf_install gnome-shell-extension-appindicator
-dnf_install gnome-shell-extension-apps-menu
 dnf_install gnome-shell-extension-blur-my-shell
 dnf_install gnome-shell-extension-dash-to-dock
-dnf_install gnome-shell-extension-drive-menu
-dnf_install gnome-shell-extension-places-menu
 dnf_install gnome-shell-extension-system-monitor
 dnf_install gnome-shell-extension-user-theme
-dnf_install gnome-shell-extension-window-list
 dnf_install gnome-tweaks
 dnf_install gnome-weather
 
@@ -64,6 +53,10 @@ dnf_install gstreamer1-plugins-bad-free
 dnf_install gstreamer1-plugins-ugly-free
 dnf_install gstreamer1-plugins-bad-freeworld
 dnf_install gstreamer1-plugins-ugly 
+dnf_install ffmpeg
+dnf_install streamlink
+dnf_install homebank
+dnf_install steam
 
 dnf_install langpacks-fr 
 dnf_install hunspell-fr 
@@ -73,29 +66,19 @@ dnf_install libreoffice-langpack-fr
 dnf_install libreoffice-help-fr 
 dnf_install glibc-langpack-fr
 
-# sudo dnf install amd-ucode
-# sudo dnf install mesa-vulkan-drivers mesa-vulkan-drivers.i686 vulkan-tools
-# sudo dnf install rocm-opencl
-# sudo dnf install pulseaudio-utils pipewire-alsa pipewire-pulseaudio
-# sudo dnf install gstreamer1-plugins-{good,bad-free,bad-free-extras,ugly} ffmpeg
-# sudo dnf install rtlwifi-firmware
-# sudo dnf install bolt
-# sudo systemctl enable --now bolt.service
-# sudo dnf install smartmontools nvme-cli
-# sudo dnf install tlp tlp-rdw
-# sudo systemctl enable --now tlp
+sudo dnf install amd-ucode
+sudo dnf install mesa-vulkan-drivers mesa-vulkan-drivers.i686 vulkan-tools
+sudo dnf install smartmontools nvme-cli
 
-snap_install spotify
+flatpak_install com.spotify.Client
 flatpak_install org.keepassxc.KeePassXC
 
 dnf_install papirus-icon-theme-dark
 dnf_install papirus-icon-theme-light
 dnf_install libreoffice-icon-theme-papirus
-snap_install icon-theme-papirus
 
-#dnf_install dotnet-sdk-10.0
-#snap_install code --classic
-#snap_install rider --classic
+dnf_install dotnet-sdk-8.0
+dnf_install dotnet-sdk-10.0
 
 # Nettoyage final
 sudo dnf autoremove -y
