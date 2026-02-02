@@ -32,7 +32,9 @@ dnf_install gnome-maps
 dnf_install gnome-extensions-app
 dnf_install gnome-shell-extension-appindicator
 dnf_install gnome-shell-extension-blur-my-shell
+dnf_install gnome-shell-extension-caffeine
 dnf_install gnome-shell-extension-dash-to-dock
+dnf_install gnome-shell-extension-gamemode
 dnf_install gnome-shell-extension-system-monitor
 dnf_install gnome-shell-extension-user-theme
 dnf_install gnome-tweaks
@@ -53,10 +55,6 @@ dnf_install gstreamer1-plugins-bad-free
 dnf_install gstreamer1-plugins-ugly-free
 dnf_install gstreamer1-plugins-bad-freeworld
 dnf_install gstreamer1-plugins-ugly 
-dnf_install ffmpeg
-dnf_install streamlink
-dnf_install homebank
-dnf_install steam
 
 dnf_install langpacks-fr 
 dnf_install hunspell-fr 
@@ -66,19 +64,20 @@ dnf_install libreoffice-langpack-fr
 dnf_install libreoffice-help-fr 
 dnf_install glibc-langpack-fr
 
-sudo dnf install amd-ucode
-sudo dnf install mesa-vulkan-drivers mesa-vulkan-drivers.i686 vulkan-tools
-sudo dnf install smartmontools nvme-cli
-
-flatpak_install com.spotify.Client
-flatpak_install org.keepassxc.KeePassXC
-
-dnf_install papirus-icon-theme-dark
-dnf_install papirus-icon-theme-light
-dnf_install libreoffice-icon-theme-papirus
-
-dnf_install dotnet-sdk-8.0
-dnf_install dotnet-sdk-10.0
+# dnf_install amd-ucode
+# dnf_install mesa-vulkan-drivers mesa-vulkan-drivers.i686 vulkan-tools
+# dnf_install smartmontools nvme-cli
+# dnf_install ffmpeg
+# dnf_install streamlink
+# dnf_install homebank
+# dnf_install steam
+# dnf_install papirus-icon-theme-dark
+# dnf_install papirus-icon-theme-light
+# dnf_install libreoffice-icon-theme-papirus
+# dnf_install dotnet-sdk-8.0
+# dnf_install dotnet-sdk-10.0
+# flatpak_install com.spotify.Client
+# flatpak_install org.keepassxc.KeePassXC
 
 # Nettoyage final
 sudo dnf autoremove -y

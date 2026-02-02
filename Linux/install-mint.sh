@@ -10,11 +10,9 @@ fi
 
 sudo apt update
 sudo apt full-upgrade -y
-if command -v snap >/dev/null 2>&1; then
-    sudo snap refresh
-fi
 if command -v flatpak >/dev/null 2>&1; then
     flatpak update -y
+    flatpak repair -y
 fi
 
 apt_install curl
