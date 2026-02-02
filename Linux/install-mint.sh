@@ -12,7 +12,7 @@ sudo apt update
 sudo apt full-upgrade -y
 if command -v flatpak >/dev/null 2>&1; then
     flatpak update -y
-    flatpak repair -y
+    flatpak repair
 fi
 
 apt_install curl

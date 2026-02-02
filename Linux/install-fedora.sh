@@ -22,7 +22,7 @@ if ! rpm -q rpmfusion-free-release >/dev/null 2>&1; then
 fi
 
 flatpak update -y
-flatpak repair -y
+flatpak repair
 
 dnf_install file-roller
 dnf_install file-roller-nautilus
