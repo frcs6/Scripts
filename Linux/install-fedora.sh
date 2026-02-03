@@ -63,20 +63,12 @@ dnf_install libreoffice-langpack-fr
 dnf_install libreoffice-help-fr 
 dnf_install glibc-langpack-fr
 
-# dnf_install amd-ucode
-# dnf_install mesa-vulkan-drivers mesa-vulkan-drivers.i686 vulkan-tools
-# dnf_install smartmontools nvme-cli
-# dnf_install ffmpeg
-# dnf_install streamlink
-# dnf_install homebank
-# dnf_install steam
-# dnf_install papirus-icon-theme-dark
-# dnf_install papirus-icon-theme-light
-# dnf_install libreoffice-icon-theme-papirus
-# dnf_install dotnet-sdk-8.0
-# dnf_install dotnet-sdk-10.0
-# flatpak_install com.spotify.Client
-# flatpak_install org.keepassxc.KeePassXC
+dnf_install papirus-icon-theme-dark
+dnf_install papirus-icon-theme-light
+dnf_install libreoffice-icon-theme-papirus
+
+flatpak_install com.spotify.Client
+flatpak_install org.keepassxc.KeePassXC
 
 # Nettoyage final
 sudo dnf autoremove -y
