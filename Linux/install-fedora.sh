@@ -33,7 +33,6 @@ dnf_install gnome-shell-extension-appindicator
 dnf_install gnome-shell-extension-blur-my-shell
 dnf_install gnome-shell-extension-caffeine
 dnf_install gnome-shell-extension-dash-to-dock
-dnf_install gnome-shell-extension-gamemode
 dnf_install gnome-shell-extension-system-monitor
 dnf_install gnome-shell-extension-user-theme
 dnf_install gnome-tweaks
