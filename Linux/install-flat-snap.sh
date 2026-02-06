@@ -20,6 +20,7 @@ if is_ubuntu; then
     apt_install gnome-software
     apt_install gnome-software-plugin-flatpak
     apt_install gnome-software-plugin-snap
+    snap_remove snap-store
 elif is_kubuntu; then
     apt_install plasma-discover
     apt_install plasma-discover-backend-flatpak

@@ -28,7 +28,6 @@ if is_ubuntu; then
     apt_install gnome-shell-extensions
     apt_install gnome-tweaks
     apt_install gnome-weather
-    snap_remove snap-store
 elif is_kubuntu; then
     apt_install kdegames
     apt_install marble
