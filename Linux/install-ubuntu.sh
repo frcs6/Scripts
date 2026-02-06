@@ -33,6 +33,7 @@ elif is_kubuntu; then
     apt_install marble
 fi
 
+apt_install libreoffice
 apt_install curl
 apt_install libfuse2t64
 apt_install samba
