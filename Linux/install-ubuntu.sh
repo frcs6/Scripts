@@ -59,7 +59,9 @@ apt_install vlc
 install_google_chrome
 flatpak_install org.keepassxc.KeePassXC
 apt_install papirus-icon-theme
-snap_install icon-theme-papirus
+if command -v snap >/dev/null 2>&1; then
+    snap_install icon-theme-papirus
+fi
 
 # Nettoyage final
 sudo apt autoremove --purge -y
