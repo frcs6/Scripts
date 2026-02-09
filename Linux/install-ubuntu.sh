@@ -58,6 +58,8 @@ apt_install gstreamer1.0-libav
 apt_install vlc
 install_google_chrome
 flatpak_install org.keepassxc.KeePassXC
+apt_install papirus-icon-theme
+snap_install icon-theme-papirus
 
 # Nettoyage final
 sudo apt autoremove --purge -y
