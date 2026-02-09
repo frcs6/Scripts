@@ -30,10 +30,15 @@ if is_ubuntu; then
     apt_install gnome-tweaks
     apt_install gnome-weather
     apt_install gufw
+    snap_install spotify
 elif is_kubuntu; then
     echo "Kubuntu"
     apt_install kdegames
     apt_install marble
+    snap_install spotify
+elif is_mint_cinnamon; then
+    echo "Linux Mint Cinnamon"
+    apt_install spotify-client
 fi
 
 apt_install libreoffice
@@ -53,9 +58,6 @@ apt_install gstreamer1.0-libav
 apt_install vlc
 install_google_chrome
 flatpak_install org.keepassxc.KeePassXC
-snap_install spotify
-apt_install papirus-icon-theme
-snap_install icon-theme-papirus
 
 # Nettoyage final
 sudo apt autoremove --purge -y

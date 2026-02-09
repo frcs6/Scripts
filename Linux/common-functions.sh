@@ -185,3 +185,12 @@ is_kubuntu() {
     esac
     return 1
 }
+
+is_mint_cinnamon() {
+    local x=${XDG_CURRENT_DESKTOP:-}
+    x=${x,,}
+    case "$x" in
+        *x-cinnamon*) return 0 ;;
+    esac
+    return 1
+}
