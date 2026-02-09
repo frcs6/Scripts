@@ -38,6 +38,7 @@ elif is_kubuntu; then
     snap_install spotify
 elif is_mint_cinnamon; then
     echo "Linux Mint Cinnamon"
+    apt_install gnome-games
     apt_install spotify-client
 fi
 
