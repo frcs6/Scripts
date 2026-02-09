@@ -18,6 +18,7 @@ if command -v flatpak >/dev/null 2>&1; then
 fi
 
 if is_ubuntu; then
+    echo "Ubuntu"
     apt_install file-roller
     apt_install gnome-calendar
     apt_install gnome-contacts
@@ -28,7 +29,9 @@ if is_ubuntu; then
     apt_install gnome-shell-extensions
     apt_install gnome-tweaks
     apt_install gnome-weather
+    apt_install gufw
 elif is_kubuntu; then
+    echo "Kubuntu"
     apt_install kdegames
     apt_install marble
 fi
