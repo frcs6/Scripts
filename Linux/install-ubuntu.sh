@@ -66,8 +66,6 @@ fi
 
 # Nettoyage final
 sudo apt autoremove --purge -y
-sudo apt autopurge -y
-sudo apt autoremove -y
 if command -v flatpak >/dev/null 2>&1; then
     flatpak uninstall --unused -y
 fi
