@@ -10,7 +10,3 @@ source "$SCRIPT_DIR/common-functions.sh"
 #flatpak_install org.gimp.GIMP
 #flatpak_install org.inkscape.Inkscape
 #flatpak_install org.kde.krita
-
-#dnf_install amd-ucode
-#dnf_install mesa-vulkan-drivers mesa-vulkan-drivers.i686 vulkan-tools
-#dnf_install smartmontools nvme-cli

@@ -20,25 +20,17 @@ fi
 if is_ubuntu; then
     echo "Ubuntu"
     apt_install file-roller
-    apt_install gnome-calendar
-    apt_install gnome-contacts
-    apt_install gnome-games
-    apt_install gnome-maps
     apt_install gnome-shell-extension-alphabetical-grid
     apt_install gnome-shell-extension-prefs
     apt_install gnome-shell-extensions
     apt_install gnome-tweaks
-    apt_install gnome-weather
     apt_install gufw
     snap_install spotify
 elif is_kubuntu; then
     echo "Kubuntu"
-    apt_install kdegames
-    apt_install marble
     snap_install spotify
 elif is_mint_cinnamon; then
     echo "Linux Mint Cinnamon"
-    apt_install gnome-games
     apt_install spotify-client
 fi
 
@@ -59,10 +51,6 @@ apt_install gstreamer1.0-libav
 apt_install vlc
 install_google_chrome
 flatpak_install org.keepassxc.KeePassXC
-apt_install papirus-icon-theme
-if command -v snap >/dev/null 2>&1; then
-    snap_install icon-theme-papirus
-fi
 
 # Nettoyage final
 sudo apt autoremove --purge -y
