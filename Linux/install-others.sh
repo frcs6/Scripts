@@ -10,3 +10,6 @@ source "$SCRIPT_DIR/common-functions.sh"
 #flatpak_install org.gimp.GIMP
 #flatpak_install org.inkscape.Inkscape
 #flatpak_install org.kde.krita
+#flatpak_install com.github.tchx84.Flatseal
+#flatpak_install com.vysp3r.ProtonPlus 
+#flatpak_install io.github.electronstudio.WeylusCommunityEdition
