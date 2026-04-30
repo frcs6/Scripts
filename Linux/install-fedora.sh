@@ -34,8 +34,8 @@ dnf_install gstreamer1-plugins-base
 dnf_install gstreamer1-plugins-good
 dnf_install gstreamer1-plugins-bad-free
 dnf_install gstreamer1-plugins-ugly-free
-dnf_install gstreamer1-plugins-bad-freeworld
-dnf_install gstreamer1-plugins-ugly 
+#dnf_install gstreamer1-plugins-bad-freeworld
+#dnf_install gstreamer1-plugins-ugly 
 
 dnf_install langpacks-fr 
 dnf_install hunspell-fr 
