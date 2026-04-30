@@ -7,6 +7,7 @@
 - Configure Online Account
 - Add language in Libre Office
 - Timeshift
+- ProtonVpn
 
 ## RClone - auto-start command
 
