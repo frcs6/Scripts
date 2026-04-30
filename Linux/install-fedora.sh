@@ -15,10 +15,8 @@ dnf_install file-roller
 dnf_install file-roller-nautilus
 dnf_install gnome-extensions-app
 dnf_install gnome-shell-extension-appindicator
-dnf_install gnome-shell-extension-blur-my-shell
 dnf_install gnome-shell-extension-dash-to-dock
 dnf_install gnome-shell-extension-system-monitor
-dnf_install gnome-shell-extension-user-theme
 dnf_install gnome-tweaks
 
 dnf_install fuse3-libs
@@ -44,10 +42,6 @@ dnf_install mythes-fr
 dnf_install libreoffice-langpack-fr 
 dnf_install libreoffice-help-fr 
 dnf_install glibc-langpack-fr
-
-dnf_install papirus-icon-theme-dark
-dnf_install papirus-icon-theme-light
-dnf_install libreoffice-icon-theme-papirus
 
 flatpak_install com.spotify.Client
 flatpak_install org.keepassxc.KeePassXC
