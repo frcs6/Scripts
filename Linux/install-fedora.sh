@@ -15,10 +15,12 @@ dnf_install file-roller
 dnf_install file-roller-nautilus
 dnf_install gnome-extensions-app
 dnf_install gnome-shell-extension-appindicator
-dnf_install gnome-shell-extension-dash-to-dock
+#dnf_install gnome-shell-extension-dash-to-dock
 dnf_install gnome-shell-extension-system-monitor
 dnf_install gnome-tweaks
 
+dnf_install fuse
+dnf_install fuse-libs
 dnf_install fuse3-libs
 dnf_install google-chrome-stable
 dnf_install libreoffice
@@ -35,14 +37,7 @@ dnf_install gstreamer1-plugins-ugly-free
 #dnf_install gstreamer1-plugins-bad-freeworld
 #dnf_install gstreamer1-plugins-ugly 
 
-dnf_install langpacks-fr 
-dnf_install hunspell-fr 
-dnf_install hyphen-fr 
-dnf_install mythes-fr 
-dnf_install libreoffice-langpack-fr 
-dnf_install libreoffice-help-fr 
-dnf_install glibc-langpack-fr
-
+dnf_install langpacks-fr
 flatpak_install com.spotify.Client
 flatpak_install org.keepassxc.KeePassXC
 
