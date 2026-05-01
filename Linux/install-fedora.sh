@@ -15,10 +15,10 @@ dnf_install file-roller
 dnf_install file-roller-nautilus
 dnf_install gnome-extensions-app
 dnf_install gnome-shell-extension-appindicator
-#dnf_install gnome-shell-extension-dash-to-dock
+dnf_install gnome-shell-extension-dash-to-dock
 dnf_install gnome-shell-extension-system-monitor
 dnf_install gnome-tweaks
-
+dnf_install firewall-config
 dnf_install fuse
 dnf_install fuse-libs
 dnf_install fuse3-libs
@@ -38,7 +38,7 @@ dnf_install gstreamer1-plugins-ugly-free
 #dnf_install gstreamer1-plugins-ugly 
 
 dnf_install langpacks-fr
-flatpak_install com.spotify.Client
+#flatpak_install com.spotify.Client
 flatpak_install org.keepassxc.KeePassXC
 
 # Nettoyage final
