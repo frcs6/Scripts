@@ -6,6 +6,8 @@ source "$SCRIPT_DIR/common-functions.sh"
 #apt_install caffeine
 #apt_install gamemode
 
+#dnf_install gamemode
+
 #flatpak_install com.github.PintaProject.Pinta
 #flatpak_install org.gimp.GIMP
 #flatpak_install org.inkscape.Inkscape
