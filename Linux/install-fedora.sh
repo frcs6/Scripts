@@ -29,18 +29,17 @@ dnf_install timeshift
 dnf_install vlc
 dnf_install wget2
 dnf_install gamemode
-dnf_install gstreamer1-plugin-libav
 dnf_install gstreamer1-plugins-base
 dnf_install gstreamer1-plugins-good
-dnf_install gstreamer1-plugins-bad-free
-dnf_install gstreamer1-plugins-ugly-free
-#dnf_install gstreamer1-plugins-bad-freeworld
-#dnf_install gstreamer1-plugins-ugly 
+dnf_install gstreamer1-plugins-bad-freeworld
+dnf_install gstreamer1-plugins-ugly
+dnf_install gstreamer1-libav
 dnf_install langpacks-fr
 dnf_install papirus-icon-theme-dark
 dnf_install papirus-icon-theme-light
 dnf_install libreoffice-icon-theme-papirus
 dnf_install java-25-openjdk
+dnf_install ffmpeg #sudo dnf swap ffmpeg-free ffmpeg --allowerasing
 
 flatpak_install com.spotify.Client
 flatpak_install org.keepassxc.KeePassXC
