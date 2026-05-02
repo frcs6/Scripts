@@ -36,9 +36,12 @@ dnf_install gstreamer1-plugins-bad-free
 dnf_install gstreamer1-plugins-ugly-free
 #dnf_install gstreamer1-plugins-bad-freeworld
 #dnf_install gstreamer1-plugins-ugly 
-
 dnf_install langpacks-fr
-#flatpak_install com.spotify.Client
+dnf_install papirus-icon-theme-dark
+dnf_install papirus-icon-theme-light
+dnf_install libreoffice-icon-theme-papirus
+
+flatpak_install com.spotify.Client
 flatpak_install org.keepassxc.KeePassXC
 
 # Nettoyage final
