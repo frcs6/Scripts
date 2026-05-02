@@ -8,16 +8,16 @@ if ! command -v apt >/dev/null 2>&1; then
     exit 0
 fi
 
-touch ~/.hidden
-grep -qx "snap" ~/.hidden || echo "snap" >> ~/.hidden
+# touch ~/.hidden
+# grep -qx "snap" ~/.hidden || echo "snap" >> ~/.hidden
 
-apt_install flatpak
-apt_install snapd
-apt_install gnome-software
-apt_install gnome-software-plugin-flatpak
-apt_install gnome-software-plugin-snap
+# apt_install flatpak
+# apt_install snapd
+# apt_install gnome-software
+# apt_install gnome-software-plugin-flatpak
+# apt_install gnome-software-plugin-snap
 
-sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+# sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 sudo apt update
 sudo apt full-upgrade -y
