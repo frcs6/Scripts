@@ -40,3 +40,13 @@ apt_install gnome-shell-extension-caffeine
 apt_install gnome-shell-extension-dashtodock
 apt_install gnome-shell-extension-desktop-icons-ng
 apt_install gnome-shell-extension-tiling-assistant
+apt_install gnome-tweaks
+
+apt_install curl
+apt_install gamemode
+apt_install libreoffice
+apt_install libfuse2t64
+apt_install timeshift
+apt_install ttf-mscorefonts-installer
+apt_install vlc
+apt_install wget
