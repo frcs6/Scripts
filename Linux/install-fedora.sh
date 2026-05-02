@@ -40,6 +40,7 @@ dnf_install langpacks-fr
 dnf_install papirus-icon-theme-dark
 dnf_install papirus-icon-theme-light
 dnf_install libreoffice-icon-theme-papirus
+dnf_install java-25-openjdk
 
 flatpak_install com.spotify.Client
 flatpak_install org.keepassxc.KeePassXC

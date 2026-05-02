@@ -13,3 +13,5 @@ source "$SCRIPT_DIR/common-functions.sh"
 #flatpak_install com.github.tchx84.Flatseal
 #flatpak_install com.vysp3r.ProtonPlus 
 #flatpak_install io.github.electronstudio.WeylusCommunityEdition
+
+#flatpak_install install flathub de.swsnr.pictureoftheday
