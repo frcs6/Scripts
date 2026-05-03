@@ -38,21 +38,14 @@ elif is_mint_cinnamon; then
     apt_install spotify-client
 fi
 
-# apt_install libreoffice
-# apt_install curl
-# apt_install libfuse2t64
-# apt_install samba
-# apt_install timeshift
+apt_install curl
+apt_install libfuse2t64
+apt_install libreoffice
+apt_install timeshift
+apt_install ubuntu-restricted-extras
+apt_install vlc
+
 # apt_install ttf-mscorefonts-installer
-# apt_install ubuntu-restricted-addons
-# apt_install ubuntu-restricted-extras
-# apt_install wget
-# apt_install gstreamer1.0-plugins-base
-# apt_install gstreamer1.0-plugins-good
-# apt_install gstreamer1.0-plugins-bad
-# apt_install gstreamer1.0-plugins-ugly
-# apt_install gstreamer1.0-libav
-# apt_install vlc
 
 install_google_chrome
 
