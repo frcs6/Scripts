@@ -62,7 +62,7 @@ flatpak_install org.kde.krita
 flatpak_install org.keepassxc.KeePassXC
 flatpak_install com.github.PintaProject.Pinta
 flatpak_install com.github.tchx84.Flatseal
-flatpak_install com.vysp3r.ProtonPlus 
+flatpak_install com.vysp3r.ProtonPlus
 
 # Nettoyage final
 sudo apt autoremove --purge -y
