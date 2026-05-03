@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# TODO: Séparer le script en deux
+
 SCRIPT_DIR=$(dirname "${BASH_SOURCE[0]}")
 source "$SCRIPT_DIR/common-functions.sh"
 
