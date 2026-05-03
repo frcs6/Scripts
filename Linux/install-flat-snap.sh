@@ -16,12 +16,12 @@ grep -qx "snap" ~/.hidden || echo "snap" >> ~/.hidden
 apt_install flatpak
 apt_install snapd
 
-if is_ubuntu; then
+if is_gnome; then
     apt_install gnome-software
     apt_install gnome-software-plugin-flatpak
     apt_install gnome-software-plugin-snap
     snap_remove snap-store
-elif is_kubuntu; then
+elif is_kde; then
     apt_install plasma-discover
     apt_install plasma-discover-backend-flatpak
     apt_install plasma-discover-backend-snap

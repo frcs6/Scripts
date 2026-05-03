@@ -145,7 +145,7 @@ install_google_chrome() {
     rm -rf ~/tmp
 }
 
-is_ubuntu() {
+is_gnome() {
     local x=${XDG_CURRENT_DESKTOP:-}
     x=${x,,}
     case "$x" in
@@ -154,7 +154,7 @@ is_ubuntu() {
     return 1
 }
 
-is_kubuntu() {
+is_kde() {
     local x=${XDG_CURRENT_DESKTOP:-}
     x=${x,,}
     case "$x" in
@@ -163,7 +163,7 @@ is_kubuntu() {
     return 1
 }
 
-is_mint_cinnamon() {
+is_cinnamon() {
     local x=${XDG_CURRENT_DESKTOP:-}
     x=${x,,}
     case "$x" in

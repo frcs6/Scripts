@@ -11,20 +11,23 @@ fi
 sudo dnf upgrade -y    
 flatpak update -y
 
-dnf_install file-roller
-dnf_install file-roller-nautilus
-dnf_install gnome-extensions-app
-dnf_install gnome-shell-extension-appindicator
-dnf_install gnome-shell-extension-dash-to-dock
-dnf_install gnome-shell-extension-system-monitor
-dnf_install gnome-tweaks
-dnf_install firewall-config
+if is_gnome; then
+    echo "Fedora Gnome"
+    dnf_install file-roller
+    dnf_install file-roller-nautilus
+    dnf_install gnome-extensions-app
+    dnf_install gnome-shell-extension-appindicator
+    dnf_install gnome-shell-extension-dash-to-dock
+    dnf_install gnome-shell-extension-system-monitor
+    dnf_install gnome-tweaks
+    #dnf_install firewall-config
+fi
+
 dnf_install fuse
 dnf_install fuse-libs
 dnf_install fuse3-libs
 dnf_install google-chrome-stable
 dnf_install libreoffice
-dnf_install samba
 dnf_install timeshift
 dnf_install vlc
 dnf_install wget2
@@ -33,12 +36,9 @@ dnf_install gstreamer1-plugins-base
 dnf_install gstreamer1-plugins-good
 dnf_install gstreamer1-plugins-bad-freeworld
 dnf_install gstreamer1-plugins-ugly
-dnf_install gstreamer1-libav
+dnf_install gstreamer1-plugin-libav
 dnf_install langpacks-fr
 dnf_install papirus-icon-theme
-dnf_install papirus-icon-theme-dark
-dnf_install papirus-icon-theme-light
-dnf_install libreoffice-icon-theme-papirus
 dnf_install java-25-openjdk
 # sudo dnf swap ffmpeg-free ffmpeg --allowerasing
 # dnf_install ffmpeg

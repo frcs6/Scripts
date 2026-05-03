@@ -23,14 +23,17 @@ if command -v flatpak >/dev/null 2>&1; then
     flatpak update -y
 fi
 
-apt_install gnome-shell-extensions
-apt_install gnome-shell-extension-appindicator
-apt_install gnome-shell-extension-caffeine
-apt_install gnome-shell-extension-dashtodock
-apt_install gnome-shell-extension-desktop-icons-ng
-apt_install gnome-shell-extension-tiling-assistant
-apt_install gnome-tweaks
-apt_install gufw
+if is_gnome; then
+    echo "Debian Gnome"
+    apt_install gnome-shell-extensions
+    apt_install gnome-shell-extension-appindicator
+    apt_install gnome-shell-extension-caffeine
+    apt_install gnome-shell-extension-dashtodock
+    apt_install gnome-shell-extension-desktop-icons-ng
+    apt_install gnome-shell-extension-tiling-assistant
+    apt_install gnome-tweaks
+    apt_install gufw
+fi
 
 apt_install curl
 apt_install ffmpeg

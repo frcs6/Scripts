@@ -17,7 +17,7 @@ if command -v flatpak >/dev/null 2>&1; then
     flatpak update -y
 fi
 
-if is_ubuntu; then
+if is_gnome; then
     echo "Ubuntu"
     apt_install file-roller
     apt_install gnome-calendar
@@ -29,10 +29,10 @@ if is_ubuntu; then
     apt_install gnome-weather
     apt_install gufw
     snap_install spotify
-elif is_kubuntu; then
+elif is_kde; then
     echo "Kubuntu"
     snap_install spotify
-elif is_mint_cinnamon; then
+elif is_cinnamon; then
     echo "Linux Mint Cinnamon"
     apt_install spotify-client
 fi
