@@ -6,6 +6,9 @@
 # Dans /etc/apt/sources.list
 # main contrib non-free non-free-firmware
 
+# Dans /etc/default/grub
+# GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+
 SCRIPT_DIR=$(dirname "${BASH_SOURCE[0]}")
 source "$SCRIPT_DIR/common-functions.sh"
 
@@ -56,7 +59,7 @@ install_google_chrome
 
 apt_remove evolution
 
-snap_install spotify
+#snap_install spotify # Peux être remplacer par le .deb officiel
 
 flatpak_install de.swsnr.pictureoftheday
 flatpak_install org.gimp.GIMP

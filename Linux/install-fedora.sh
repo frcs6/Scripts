@@ -38,7 +38,7 @@ dnf_install gstreamer1-plugins-bad-freeworld
 dnf_install gstreamer1-plugins-ugly
 dnf_install gstreamer1-plugin-libav
 dnf_install langpacks-fr
-dnf_install papirus-icon-theme
+# dnf_install papirus-icon-theme
 dnf_install java-25-openjdk
 # sudo dnf swap ffmpeg-free ffmpeg --allowerasing
 # dnf_install ffmpeg
