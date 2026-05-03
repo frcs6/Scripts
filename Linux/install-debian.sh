@@ -30,16 +30,40 @@ apt_install gnome-shell-extension-dashtodock
 apt_install gnome-shell-extension-desktop-icons-ng
 apt_install gnome-shell-extension-tiling-assistant
 apt_install gnome-tweaks
+apt_install gufw
 
 apt_install curl
+apt_install ffmpeg
 apt_install gamemode
 apt_install libreoffice
 apt_install libfuse2t64
+apt_install papirus-icon-theme
 apt_install timeshift
 apt_install ttf-mscorefonts-installer
+apt_install unrar
 apt_install vlc
 apt_install wget
 
 # TODO: Dash to Dock action à configurer en ligne de commande
 # TODO: Pack de langues FR (penser à Firefox)
-# TODO: Supprimer Evolution
+
+install_google_chrome
+
+apt_remove evolution
+
+snap_install spotify
+
+flatpak_install de.swsnr.pictureoftheday
+flatpak_install org.gimp.GIMP
+flatpak_install org.inkscape.Inkscape
+flatpak_install org.kde.krita
+flatpak_install org.keepassxc.KeePassXC
+flatpak_install com.github.PintaProject.Pinta
+flatpak_install com.github.tchx84.Flatseal
+flatpak_install com.vysp3r.ProtonPlus 
+
+# Nettoyage final
+sudo apt autoremove --purge -y
+if command -v flatpak >/dev/null 2>&1; then
+    flatpak uninstall --unused -y
+fi
