@@ -24,7 +24,6 @@ if is_ubuntu; then
     apt_install gnome-contacts
     apt_install gnome-maps
     apt_install gnome-shell-extension-alphabetical-grid
-    # apt_install gnome-shell-extension-prefs
     apt_install gnome-shell-extensions
     apt_install gnome-tweaks
     apt_install gnome-weather
@@ -48,6 +47,8 @@ apt_install vlc
 # apt_install ttf-mscorefonts-installer
 
 install_google_chrome
+
+snap_remove thunderbird
 
 flatpak_install de.swsnr.pictureoftheday
 flatpak_install org.gimp.GIMP
