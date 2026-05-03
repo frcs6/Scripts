@@ -171,3 +171,12 @@ is_cinnamon() {
     esac
     return 1
 }
+
+is_xfce() {
+    local x=${XDG_CURRENT_DESKTOP:-}
+    x=${x,,}
+    case "$x" in
+        *xfce*) return 0 ;;
+    esac
+    return 1
+}

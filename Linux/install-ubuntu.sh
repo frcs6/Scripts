@@ -35,6 +35,9 @@ elif is_kde; then
 elif is_cinnamon; then
     echo "Linux Mint Cinnamon"
     apt_install spotify-client
+elif is_xfce; then
+    echo "Xubuntu"
+    snap_install spotify
 fi
 
 apt_install curl

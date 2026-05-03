@@ -17,6 +17,8 @@ elif is_kde; then
     echo "KDE"
 elif is_cinnamon; then
     echo "Cinnamon"
+elif is_xfce; then
+    echo "Xfce"
 else
     echo "Autre"
 fi
