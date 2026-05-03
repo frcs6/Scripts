@@ -40,11 +40,11 @@ fi
 apt_install curl
 apt_install libfuse2t64
 apt_install libreoffice
+# apt_install papirus-icon-theme
+# snap_instal icon-theme-papirus
 apt_install timeshift
 apt_install ubuntu-restricted-extras
 apt_install vlc
-
-# apt_install ttf-mscorefonts-installer
 
 install_google_chrome
 
