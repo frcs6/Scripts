@@ -44,8 +44,10 @@ apt_install unrar
 apt_install vlc
 apt_install wget
 
-# TODO: Dash to Dock action à configurer en ligne de commande
-# TODO: Pack de langues FR (penser à Firefox)
+apt_install libreoffice-l10n-fr
+apt_install libreoffice-help-fr
+apt_install hunspell-fr
+apt_install firefox-l10n-fr
 
 install_google_chrome
 
