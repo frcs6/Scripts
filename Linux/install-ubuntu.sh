@@ -22,10 +22,9 @@ if is_ubuntu; then
     apt_install file-roller
     apt_install gnome-calendar
     apt_install gnome-contacts
-    #apt_install gnome-games
     apt_install gnome-maps
     apt_install gnome-shell-extension-alphabetical-grid
-    apt_install gnome-shell-extension-prefs
+    # apt_install gnome-shell-extension-prefs
     apt_install gnome-shell-extensions
     apt_install gnome-tweaks
     apt_install gnome-weather
@@ -39,23 +38,32 @@ elif is_mint_cinnamon; then
     apt_install spotify-client
 fi
 
-apt_install libreoffice
-apt_install curl
-apt_install libfuse2t64
-apt_install samba
-apt_install timeshift
-apt_install ttf-mscorefonts-installer
-apt_install ubuntu-restricted-addons
-apt_install ubuntu-restricted-extras
-apt_install wget
-apt_install gstreamer1.0-plugins-base
-apt_install gstreamer1.0-plugins-good
-apt_install gstreamer1.0-plugins-bad
-apt_install gstreamer1.0-plugins-ugly
-apt_install gstreamer1.0-libav
-apt_install vlc
+# apt_install libreoffice
+# apt_install curl
+# apt_install libfuse2t64
+# apt_install samba
+# apt_install timeshift
+# apt_install ttf-mscorefonts-installer
+# apt_install ubuntu-restricted-addons
+# apt_install ubuntu-restricted-extras
+# apt_install wget
+# apt_install gstreamer1.0-plugins-base
+# apt_install gstreamer1.0-plugins-good
+# apt_install gstreamer1.0-plugins-bad
+# apt_install gstreamer1.0-plugins-ugly
+# apt_install gstreamer1.0-libav
+# apt_install vlc
+
 install_google_chrome
+
+flatpak_install de.swsnr.pictureoftheday
+flatpak_install org.gimp.GIMP
+flatpak_install org.inkscape.Inkscape
+flatpak_install org.kde.krita
 flatpak_install org.keepassxc.KeePassXC
+flatpak_install com.github.PintaProject.Pinta
+flatpak_install com.github.tchx84.Flatseal
+# flatpak_install com.vysp3r.ProtonPlus
 
 # Nettoyage final
 sudo apt autoremove --purge -y

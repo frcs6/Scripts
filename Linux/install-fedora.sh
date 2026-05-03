@@ -35,14 +35,23 @@ dnf_install gstreamer1-plugins-bad-freeworld
 dnf_install gstreamer1-plugins-ugly
 dnf_install gstreamer1-libav
 dnf_install langpacks-fr
+dnf_install papirus-icon-theme
 dnf_install papirus-icon-theme-dark
 dnf_install papirus-icon-theme-light
 dnf_install libreoffice-icon-theme-papirus
 dnf_install java-25-openjdk
-dnf_install ffmpeg #sudo dnf swap ffmpeg-free ffmpeg --allowerasing
+# sudo dnf swap ffmpeg-free ffmpeg --allowerasing
+# dnf_install ffmpeg
 
-flatpak_install com.spotify.Client
+flatpak_install de.swsnr.pictureoftheday
+flatpak_install org.gimp.GIMP
+flatpak_install org.inkscape.Inkscape
+flatpak_install org.kde.krita
 flatpak_install org.keepassxc.KeePassXC
+flatpak_install com.github.PintaProject.Pinta
+flatpak_install com.github.tchx84.Flatseal
+flatpak_install com.spotify.Client
+# flatpak_install com.vysp3r.ProtonPlus
 
 # Nettoyage final
 sudo dnf autoremove -y

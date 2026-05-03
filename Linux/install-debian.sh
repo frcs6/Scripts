@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# Dans .profile
+# PATH="$PATH:/usr/sbin:/sbin"
+
+# Dans /etc/apt/sources.list
+# main contrib non-free non-free-firmware
+
 SCRIPT_DIR=$(dirname "${BASH_SOURCE[0]}")
 source "$SCRIPT_DIR/common-functions.sh"
 
@@ -17,12 +23,6 @@ if command -v flatpak >/dev/null 2>&1; then
     flatpak update -y
 fi
 
-# Dans .profile
-# PATH="$PATH:/usr/sbin:/sbin"
-
-# Dans /etc/apt/sources.list
-# main contrib non-free non-free-firmware
-
 apt_install gnome-shell-extensions
 apt_install gnome-shell-extension-appindicator
 apt_install gnome-shell-extension-caffeine
@@ -37,17 +37,17 @@ apt_install ffmpeg
 apt_install gamemode
 apt_install libreoffice
 apt_install libfuse2t64
-apt_install papirus-icon-theme
+# apt_install papirus-icon-theme
 apt_install timeshift
 apt_install ttf-mscorefonts-installer
 apt_install unrar
 apt_install vlc
 apt_install wget
 
-apt_install libreoffice-l10n-fr
-apt_install libreoffice-help-fr
-apt_install hunspell-fr
-apt_install firefox-l10n-fr
+# apt_install libreoffice-l10n-fr
+# apt_install libreoffice-help-fr
+# apt_install hunspell-fr
+# apt_install firefox-l10n-fr
 
 install_google_chrome
 
@@ -62,7 +62,7 @@ flatpak_install org.kde.krita
 flatpak_install org.keepassxc.KeePassXC
 flatpak_install com.github.PintaProject.Pinta
 flatpak_install com.github.tchx84.Flatseal
-flatpak_install com.vysp3r.ProtonPlus
+# flatpak_install com.vysp3r.ProtonPlus
 
 # Nettoyage final
 sudo apt autoremove --purge -y
