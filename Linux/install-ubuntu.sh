@@ -28,16 +28,16 @@ if is_gnome; then
     apt_install gnome-tweaks
     apt_install gnome-weather
     apt_install gufw
-    snap_install spotify
+    #snap_install spotify # Peux être remplacer par le .deb officiel
 elif is_kde; then
     echo "Kubuntu"
-    snap_install spotify
+    #snap_install spotify # Peux être remplacer par le .deb officiel
 elif is_cinnamon; then
     echo "Linux Mint Cinnamon"
     apt_install spotify-client
 elif is_xfce; then
     echo "Xubuntu"
-    snap_install spotify
+    #snap_install spotify # Peux être remplacer par le .deb officiel
 fi
 
 apt_install curl
