@@ -17,6 +17,7 @@ if is_gnome; then
     dnf_install file-roller-nautilus
     dnf_install gnome-extensions-app
     # dnf_install gnome-shell-extension-caffeine
+    # dnf_install gnome-shell-extension-gamemode
     dnf_install gnome-shell-extension-appindicator
     dnf_install gnome-shell-extension-dash-to-dock
     dnf_install gnome-shell-extension-system-monitor
