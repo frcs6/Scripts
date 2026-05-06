@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-# TODO: Séparer le script en deux
-
 SCRIPT_DIR=$(dirname "${BASH_SOURCE[0]}")
 source "$SCRIPT_DIR/common-functions.sh"
 
@@ -12,21 +10,14 @@ fi
 
 sudo apt update
 
-touch ~/.hidden
-grep -qx "snap" ~/.hidden || echo "snap" >> ~/.hidden
-
 apt_install flatpak
-apt_install snapd
 
 if is_gnome; then
     apt_install gnome-software
     apt_install gnome-software-plugin-flatpak
-    apt_install gnome-software-plugin-snap
-    snap_remove snap-store
 elif is_kde; then
     apt_install plasma-discover
     apt_install plasma-discover-backend-flatpak
-    apt_install plasma-discover-backend-snap
 fi
 
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
