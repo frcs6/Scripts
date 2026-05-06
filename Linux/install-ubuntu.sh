@@ -44,6 +44,7 @@ fi
 apt_install curl
 apt_install libfuse2t64
 apt_install libreoffice
+apt_install libreoffice-grammalecte
 # apt_install papirus-icon-theme
 # snap_instal icon-theme-papirus
 apt_install timeshift

@@ -11,6 +11,8 @@ fi
 sudo dnf upgrade -y    
 flatpak update -y
 
+# TODO Flatpak: pas toujours flathub
+
 if is_gnome; then
     echo "Fedora Gnome"
     dnf_install file-roller
@@ -31,6 +33,7 @@ dnf_install fuse-libs
 dnf_install fuse3-libs
 dnf_install google-chrome-stable
 dnf_install libreoffice
+dnf_install libreoffice-grammalecte
 dnf_install timeshift
 dnf_install vlc
 dnf_install wget2
