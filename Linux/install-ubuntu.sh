@@ -29,6 +29,7 @@ if is_gnome; then
     apt_install gnome-weather
     apt_install gufw
     #snap_install spotify # Peux être remplacer par le .deb officiel
+    flatpak_install de.swsnr.pictureoftheday
 elif is_kde; then
     echo "Kubuntu"
     #snap_install spotify # Peux être remplacer par le .deb officiel
@@ -53,7 +54,6 @@ install_google_chrome
 
 snap_remove thunderbird
 
-flatpak_install de.swsnr.pictureoftheday
 flatpak_install org.gimp.GIMP
 flatpak_install org.inkscape.Inkscape
 flatpak_install org.kde.krita

@@ -23,6 +23,7 @@ if is_gnome; then
     dnf_install gnome-shell-extension-system-monitor
     dnf_install gnome-tweaks
     #dnf_install firewall-config
+    flatpak_install de.swsnr.pictureoftheday
 fi
 
 dnf_install fuse
@@ -47,7 +48,6 @@ dnf_install gstreamer1-plugins-bad-freeworld
 dnf_install gstreamer1-plugins-ugly
 dnf_install gstreamer1-plugin-libav
 
-flatpak_install de.swsnr.pictureoftheday
 flatpak_install org.gimp.GIMP
 flatpak_install org.inkscape.Inkscape
 flatpak_install org.kde.krita

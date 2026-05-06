@@ -36,6 +36,7 @@ if is_gnome; then
     apt_install gnome-shell-extension-tiling-assistant
     apt_install gnome-tweaks
     apt_install gufw
+    flatpak_install de.swsnr.pictureoftheday
 fi
 
 apt_install curl
@@ -61,7 +62,6 @@ apt_remove evolution
 
 #snap_install spotify # Peux être remplacer par le .deb officiel
 
-flatpak_install de.swsnr.pictureoftheday
 flatpak_install org.gimp.GIMP
 flatpak_install org.inkscape.Inkscape
 flatpak_install org.kde.krita
