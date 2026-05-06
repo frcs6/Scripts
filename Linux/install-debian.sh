@@ -43,7 +43,7 @@ apt_install curl
 apt_install ffmpeg
 apt_install gamemode
 apt_install libreoffice
-# TODO apt_install libreoffice-grammalecte
+apt_install libreoffice-grammalecte
 apt_install libfuse2t64
 # apt_install papirus-icon-theme
 apt_install timeshift
