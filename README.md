@@ -3,13 +3,10 @@
 ## Configure 
 
 - Google Chrome
-- Dropbox ou OneDrive
+- Dropbox, Insync
 - Configure Online Account
-- Add language in Libre Office
+- Libre Office
+    - Languages
+    - https://www.grammalecte.net/#download
 - Timeshift
 - ProtonVpn
-
-## RClone - auto-start command
-
-`rclone --config /home/frcs6/.config/rclone/rclone.conf --vfs-cache-mode writes mount --daemon "OneDrive": /home/frcs6/OneDrive`
-(Add 30 seconds of delay on Mint)
