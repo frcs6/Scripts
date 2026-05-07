@@ -46,7 +46,6 @@ apt_install libreoffice-grammalecte
 apt_install timeshift
 apt_install ubuntu-restricted-extras
 apt_install unrar
-apt_install vlc
 apt_install wget
 
 install_google_chrome

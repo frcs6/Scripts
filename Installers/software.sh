@@ -10,6 +10,10 @@ fi
 
 # Deb
 # apt_install spotify-client # Mint
+# apt_install vlc
+
+# Rpm
+# dnf_install vlc
 
 # Flatpaks
 # flatpak_install org.gimp.GIMP
@@ -27,6 +31,7 @@ fi
 # snap_install keepassxc
 # snap_install pinta
 # snap_install spotify
+# snap_install vlc
 
 # Gaming
 # flatpak_install com.vysp3r.ProtonPlus

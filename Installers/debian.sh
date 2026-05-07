@@ -42,7 +42,6 @@ apt_install libfuse2t64
 apt_install timeshift
 apt_install ttf-mscorefonts-installer
 apt_install unrar
-apt_install vlc
 apt_install wget
 
 # apt_install libreoffice-l10n-fr

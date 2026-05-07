@@ -14,3 +14,4 @@
 - Timeshift
 - ProtonVpn
 - Spotify
+- Gnome Software: Filter not certified software

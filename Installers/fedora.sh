@@ -39,7 +39,6 @@ dnf_install libreoffice-grammalecte
 # dnf_install papirus-icon-theme
 dnf_install timeshift
 dnf_install unrar
-dnf_install vlc
 dnf_install wget2
 
 dnf_install gstreamer1-plugins-base
