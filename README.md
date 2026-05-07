@@ -13,3 +13,4 @@
     - https://www.grammalecte.net/#download
 - Timeshift
 - ProtonVpn
+- Spotify
