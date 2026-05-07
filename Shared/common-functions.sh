@@ -4,10 +4,10 @@ apt_install() {
     local package="$1"
 
     if ! dpkg -s "$package" >/dev/null 2>&1; then
-        echo "Installation de $package..."
+        echo "apt: $package installation..."
         sudo apt install "$package" -y
     else
-        echo "apt: $package est déjà installé."
+        echo "apt: $package is already installed."
     fi
 }
 
@@ -15,9 +15,9 @@ apt_remove() {
     local package="$1"
 
     if ! dpkg -s "$package" >/dev/null 2>&1; then
-        echo "apt: $package est déjà supprimé."
+        echo "apt: $package is already removed."
     else
-        echo "Suppression de $package..."
+        echo "apt: $package removing..."
         sudo apt autoremove --purge "$package" -y
     fi
 }
@@ -26,10 +26,10 @@ dnf_install() {
     local package="$1"
 
     if ! rpm -q "$package" >/dev/null 2>&1; then
-        echo "Installation de $package..."
+        echo "dnf: $package installation..."
         sudo dnf install "$package" -y
     else
-        echo "dnf: $package est déjà installé."
+        echo "dnf: $package is already installed."
     fi
 }
 
@@ -37,9 +37,9 @@ dnf_remove() {
     local package="$1"
 
     if ! rpm -q "$package" >/dev/null 2>&1; then
-        echo "dnf: $package est déjà supprimé."
+        echo "dnf: $package is already removed."
     else
-        echo "Suppression de $package..."
+        echo "dnf: $package removing..."
         sudo dnf remove "$package" -y
     fi
 }
@@ -49,10 +49,10 @@ snap_install() {
     local options="$2"
 
     if ! snap list | grep -q "^$package\b"; then
-        echo "Installation du snap $package..."
+        echo "snap: $package installation..."
         sudo snap install "$package" $options
     else
-        echo "snap: $package est déjà installé."
+        echo "snap: $package is already installed."
     fi
 }
 
@@ -60,9 +60,9 @@ snap_remove() {
     local package="$1"
 
     if ! snap list | grep -q "^$package\b"; then
-        echo "snap: $package est déjà supprimé."
+        echo "snap: $package is already removed."
     else
-        echo "Suppression du snap $package..."
+        echo "snap: $package removing..."
         sudo snap remove --purge "$package"
     fi
 }
@@ -70,20 +70,10 @@ snap_remove() {
 flatpak_install() {
     local package="$1"
 
-    if ! command -v flatpak >/dev/null 2>&1; then
-        echo "Erreur : flatpak n'est pas installé."
-        return 1
-    fi
-
-    if ! flatpak remotes | grep -q "^flathub\b"; then
-        echo "Erreur : le dépôt Flathub n'est pas configuré."
-        return 1
-    fi
-
     if flatpak info "$package" >/dev/null 2>&1; then
-        echo "flatpak: $package est déjà installé."
+        echo "flatpak: $package is already installed."
     else
-        echo "Installation du flatpak $package..."
+        echo "flatpak: $package installation..."
         flatpak install flathub "$package" -y
     fi
 }
@@ -91,16 +81,11 @@ flatpak_install() {
 flatpak_uninstall() {
     local package="$1"
 
-    if ! command -v flatpak >/dev/null 2>&1; then
-        echo "Erreur : flatpak n'est pas installé."
-        return 1
-    fi
-
     if flatpak info "$package" >/dev/null 2>&1; then
-        echo "Suppression du flatpak $package..."
+        echo "flatpak: $package removing..."
         flatpak uninstall --delete-data "$package" -y
     else
-        echo "flatpak: $package est déjà supprimé."
+        echo "flatpak: $package is already removed."
     fi
 }
 
@@ -109,16 +94,16 @@ create_symlink() {
   local LINK_PATH=$2
   if [ -d "$TARGET_PATH" ]; then
     if [ -L "$LINK_PATH" ]; then
-      echo "$LINK_PATH est déjà un lien symbolique."
+      echo "$LINK_PATH is already a symlink."
       rm "$LINK_PATH"
     else
-      echo "$LINK_PATH n'est pas un lien symbolique."
+      echo "$LINK_PATH is not a symlink."
       rm -rf "$LINK_PATH"
     fi
     ln -s "$TARGET_PATH" "$LINK_PATH"
-    echo "Lien symbolique créé : $LINK_PATH → $TARGET_PATH"
+    echo "Symlink created : $LINK_PATH → $TARGET_PATH"
   else
-    echo "Le répertoire cible n'existe pas : $TARGET_PATH"
+    echo "The target directory does not exist : $TARGET_PATH"
   fi
 }
 
@@ -128,16 +113,16 @@ install_google_chrome() {
 
     if command -v apt >/dev/null 2>&1; then
         if ! dpkg -s "google-chrome-stable" >/dev/null 2>&1; then
-            echo "Installation de google-chrome-stable..."
+            echo "Installing google-chrome-stable..."
             wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
             if [[ -f google-chrome-stable_current_amd64.deb ]]; then
                 apt_install ./google-chrome-stable_current_amd64.deb
                 rm ./google-chrome-stable_current_amd64.deb
             else
-                echo "Erreur : le fichier .deb n'a pas été téléchargé."
+                echo "Error: The .deb file was not downloaded."
             fi
         else
-            echo "google-chrome-stable est déjà installé."
+            echo "google-chrome-stable is already installed."
         fi
     fi
 

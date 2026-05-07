@@ -1,19 +1,10 @@
 #!/usr/bin/env bash
 
-# Dans .profile
-# PATH="$PATH:/usr/sbin:/sbin"
-
-# Dans /etc/apt/sources.list
-# main contrib non-free non-free-firmware
-
-# Dans /etc/default/grub
-# GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
-
 SCRIPT_DIR=$(dirname "${BASH_SOURCE[0]}")
-source "$SCRIPT_DIR/common-functions.sh"
+source "$SCRIPT_DIR/../Shared/common-functions.sh"
 
 if ! command -v apt >/dev/null 2>&1; then
-    echo "apt n'est pas disponible — script ignoré."
+    echo "Not a Debian-based system..."
     exit 0
 fi
 
@@ -36,7 +27,8 @@ if is_gnome; then
     apt_install gnome-shell-extension-tiling-assistant
     apt_install gnome-tweaks
     apt_install gufw
-    flatpak_install de.swsnr.pictureoftheday
+elif is_cinnamon; then
+    echo "LMDE"
 fi
 
 apt_install curl
@@ -46,6 +38,7 @@ apt_install libreoffice
 apt_install libreoffice-grammalecte
 apt_install libfuse2t64
 # apt_install papirus-icon-theme
+# snap_instal icon-theme-papirus
 apt_install timeshift
 apt_install ttf-mscorefonts-installer
 apt_install unrar
@@ -60,16 +53,6 @@ apt_install wget
 install_google_chrome
 
 apt_remove evolution
-
-#snap_install spotify # Peux être remplacer par le .deb officiel
-
-flatpak_install org.gimp.GIMP
-flatpak_install org.inkscape.Inkscape
-flatpak_install org.kde.krita
-flatpak_install org.keepassxc.KeePassXC
-flatpak_install com.github.PintaProject.Pinta
-flatpak_install com.github.tchx84.Flatseal
-# flatpak_install com.vysp3r.ProtonPlus
 
 # Nettoyage final
 sudo apt autoremove --purge -y

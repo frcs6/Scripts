@@ -1,7 +1,10 @@
 # Linux post installation
 
-## Configure 
-
+- Debian:
+    - .profile: PATH="$PATH:/usr/sbin:/sbin"
+    - /etc/apt/sources.list: contrib non-free + backports
+    - /etc/default/grub: GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+- Fedora: RPM Fusion
 - Google Chrome
 - Dropbox, Insync
 - Configure Online Account

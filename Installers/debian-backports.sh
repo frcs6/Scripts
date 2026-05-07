@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if ! command -v apt >/dev/null 2>&1; then
+    echo "Not a Debian-based system..."
+    exit 0
+fi
+
 sudo apt update
 
 sudo apt -t trixie-backports install linux-image-amd64 -y

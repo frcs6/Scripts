@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 SCRIPT_DIR=$(dirname "${BASH_SOURCE[0]}")
-source "$SCRIPT_DIR/common-functions.sh"
+source "$SCRIPT_DIR/../Shared/common-functions.sh"
 
 if ! command -v apt >/dev/null 2>&1; then
-    echo "apt n'est pas disponible — script ignoré."
+    echo "Not a Debian-based system..."
     exit 0
 fi
 
@@ -28,20 +28,16 @@ if is_gnome; then
     apt_install gnome-tweaks
     apt_install gnome-weather
     apt_install gufw
-    #snap_install spotify # Peux être remplacer par le .deb officiel
-    flatpak_install de.swsnr.pictureoftheday
 elif is_kde; then
     echo "Kubuntu"
-    #snap_install spotify # Peux être remplacer par le .deb officiel
 elif is_cinnamon; then
     echo "Linux Mint Cinnamon"
-    apt_install spotify-client
 elif is_xfce; then
     echo "Xubuntu"
-    #snap_install spotify # Peux être remplacer par le .deb officiel
 fi
 
 apt_install curl
+apt_install ffmpeg
 apt_install libfuse2t64
 apt_install libreoffice
 apt_install libreoffice-grammalecte
@@ -49,21 +45,14 @@ apt_install libreoffice-grammalecte
 # snap_instal icon-theme-papirus
 apt_install timeshift
 apt_install ubuntu-restricted-extras
+apt_install unrar
 apt_install vlc
+apt_install wget
 
 install_google_chrome
 
 snap_remove thunderbird
 
-flatpak_install org.gimp.GIMP
-flatpak_install org.inkscape.Inkscape
-flatpak_install org.kde.krita
-flatpak_install org.keepassxc.KeePassXC
-flatpak_install com.github.PintaProject.Pinta
-flatpak_install com.github.tchx84.Flatseal
-# flatpak_install com.vysp3r.ProtonPlus
-
-# Nettoyage final
 sudo apt autoremove --purge -y
 if command -v flatpak >/dev/null 2>&1; then
     flatpak uninstall --unused -y

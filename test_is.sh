@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
 SCRIPT_DIR=$(dirname "${BASH_SOURCE[0]}")
-source "$SCRIPT_DIR/common-functions.sh"
+source "$SCRIPT_DIR/Shared/common-functions.sh"
 
 if command -v apt >/dev/null 2>&1; then
-    echo "Debian/Ubuntu"
+    echo "Debian-based system..."
 fi
 
 if command -v dnf >/dev/null 2>&1; then
-    echo "Fedora"
+    echo "Fedora-based system..."
 fi
 
 if is_gnome; then
@@ -20,12 +20,12 @@ elif is_cinnamon; then
 elif is_xfce; then
     echo "Xfce"
 else
-    echo "Autre"
+    echo "Other desktop environment"
 fi
 
 if command -v snap >/dev/null 2>&1; then
-    echo "Snap est disponible"
+    echo "Snap is available"
 fi
 if command -v flatpak >/dev/null 2>&1; then
-    echo "Flatpak est disponible"
+    echo "Flatpak is available"
 fi

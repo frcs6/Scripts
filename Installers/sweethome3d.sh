@@ -13,7 +13,7 @@ MIME_FILE="$MIME_DIR/sweethome3d.xml"
 ICON_NAME="application-x-sweethome3d"
 
 
-echo "==> Création du type MIME ~/.local/share/mime/packages/sweethome3d.xml"
+echo "==> Creating MIME type ~/.local/share/mime/packages/sweethome3d.xml"
 mkdir -p "$MIME_DIR"
 
 cat > "$MIME_FILE" <<EOF
@@ -26,14 +26,14 @@ cat > "$MIME_FILE" <<EOF
 </mime-info>
 EOF
 
-echo "==> Mise à jour de la base MIME"
+echo "==> Updating MIME database"
 update-mime-database "$HOME/.local/share/mime"
 
-echo "==> Création du fichier .desktop"
+echo "==> Creating .desktop file"
 mkdir -p "$(dirname "$DESKTOP_FILE")"
 
 if [ -f "$DESKTOP_FILE" ]; then
-  echo "==> Suppression de l'ancien fichier .desktop"
+  echo "==> Removing old .desktop file"
   rm -f "$DESKTOP_FILE"
 fi
 
@@ -50,7 +50,7 @@ EOF
 
 chmod +x "$DESKTOP_FILE"
 
-echo "==> Installation de l'icône MIME"
+echo "==> Installing MIME icon"
 if [ -f "$ICON_PATH" ]; then
   if command -v xdg-icon-resource >/dev/null 2>&1; then
     xdg-icon-resource install --noupdate --size 128 "$ICON_PATH" "$ICON_NAME" || true
@@ -64,22 +64,22 @@ if [ -f "$ICON_PATH" ]; then
     fi
   fi
 else
-  echo "==> Aucune icône trouvée à $ICON_PATH"
+  echo "==> No icon found at $ICON_PATH"
 fi
 
-echo "==> Contenu du fichier .desktop"
+echo "==> .desktop file contents"
 cat "$DESKTOP_FILE"
 
-echo "==> Mise à jour de la base des applications"
+echo "==> Updating application database"
 update-desktop-database "$HOME/.local/share/applications"
 
-echo "==> Enregistrement de l'association MIME"
+echo "==> Registering MIME association"
 xdg-mime default sweethome3d.desktop application/x-sweethome3d 2>/dev/null || true
 gio mime application/x-sweethome3d sweethome3d.desktop 2>/dev/null || true
 
-echo "==> Vérification du type MIME"
+echo "==> Verifying MIME type"
 FILE_TEST=$(xdg-mime query filetype test.sh3d 2>/dev/null || true)
-echo "Type MIME détecté pour test.sh3d : $FILE_TEST"
+echo "Detected MIME type for test.sh3d: $FILE_TEST"
 
-echo "==> Installation terminée."
-echo "Tu peux maintenant ouvrir un .sh3d avec clic droit → Ouvrir avec → Sweet Home 3D."
+echo "==> Installation complete."
+echo "You can now open a .sh3d file with right-click → Open with → Sweet Home 3D."

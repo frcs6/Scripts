@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 SCRIPT_DIR=$(dirname "${BASH_SOURCE[0]}")
-source "$SCRIPT_DIR/common-functions.sh"
+source "$SCRIPT_DIR/../Shared/common-functions.sh"
 
 if ! command -v apt >/dev/null 2>&1; then
-    echo "apt n'est pas disponible — script ignoré."
+    echo "Not a Debian-based system..."
     exit 0
 fi
 
