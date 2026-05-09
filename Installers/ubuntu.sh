@@ -51,6 +51,11 @@ apt_install wget
 install_google_chrome
 
 snap_remove thunderbird
+apt_remove thunderbird
+
+# https://support.mozilla.org/fr/kb/installer-firefox-linux#w_install-firefox-deb-package-for-debian-based-distributions
+# snap_remove firefox
+# apt_remove firefox
 
 sudo apt autoremove --purge -y
 if command -v flatpak >/dev/null 2>&1; then
