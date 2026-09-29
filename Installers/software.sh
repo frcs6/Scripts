@@ -11,9 +11,11 @@ fi
 # Deb
 # apt_install spotify-client # Mint
 # apt_install vlc
+# apt_install xournalpp
 
 # Rpm
 # dnf_install vlc
+# dnf_install xournalpp
 
 # Flatpaks
 # flatpak_install org.gimp.GIMP
