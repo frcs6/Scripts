@@ -16,8 +16,8 @@ if is_gnome; then
     dnf_install file-roller
     dnf_install file-roller-nautilus
     dnf_install gnome-extensions-app
-    # dnf_install gnome-shell-extension-caffeine
-    # dnf_install gnome-shell-extension-gamemode
+    # dnf_install gnome-shell-extension-caffeine # BUG
+    # dnf_install gnome-shell-extension-gamemode # BUG
     dnf_install gnome-shell-extension-appindicator
     dnf_install gnome-shell-extension-dash-to-dock
     dnf_install gnome-shell-extension-system-monitor
@@ -26,7 +26,7 @@ if is_gnome; then
 fi
 
 dnf_install ffmpeg
-# sudo dnf swap ffmpeg-free ffmpeg --allowerasing
+# sudo dnf swap ffmpeg-free ffmpeg --allowerasing # ONETIME
 dnf_install fuse
 dnf_install fuse-libs
 dnf_install fuse3-libs

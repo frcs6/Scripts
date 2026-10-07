@@ -4,7 +4,9 @@
     - .profile: PATH="$PATH:/usr/sbin:/sbin"
     - /etc/apt/sources.list: contrib non-free + backports
     - /etc/default/grub: GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
-- Fedora: RPM Fusion
+- Fedora:
+    - RPM Fusion
+    - swap ffmpeg-free
 - Google Chrome
 - Dropbox, Insync
 - Configure Online Account
