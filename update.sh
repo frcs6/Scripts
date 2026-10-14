@@ -7,6 +7,7 @@ fi
 
 if command -v dnf >/dev/null 2>&1; then
     echo "Updating Fedora-based system..."
+    sudo dnf check-update
     sudo dnf upgrade -y
     sudo dnf autoremove -y
     sudo dnf clean all

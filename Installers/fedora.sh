@@ -8,6 +8,7 @@ if ! command -v dnf >/dev/null 2>&1; then
     exit 0
 fi
 
+sudo dnf check-update
 sudo dnf upgrade -y  
 flatpak update -y
 
